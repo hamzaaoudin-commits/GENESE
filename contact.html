@@ -3,8 +3,16 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Candidater — GENÈSE | Strawberry Production</title>
-<meta name="description" content="Candidatez pour le parcours GENÈSE. Un accompagnement premium, sélectif, pour transformer une idée en entreprise prête à être lancée.">
+<title>Contact — GENÈSE | Strawberry Production</title>
+<meta name="description" content="Une question avant de commencer votre parcours GENÈSE ? Écrivez-nous. Pour démarrer directement, rendez-vous sur l'application.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,440;0,9..144,600;1,9..144,440&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&family=Space+Mono:wght@400;700&display=swap">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<meta property="og:title" content="Contact — GENÈSE">
+<meta property="og:description" content="Une question avant de commencer votre parcours GENÈSE ?">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary">
 <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
@@ -18,20 +26,22 @@
       <li><a href="parcours.html">Le parcours</a></li>
       <li><a href="tarifs.html">Tarifs</a></li>
     </ul>
-    <a href="contact.html" class="nav-cta">Candidater</a>
-  </div>
+    <a href="app.html" class="nav-cta">Commencer</a>
+  <button class="nav-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
+</div>
+<div class="nav-mobile"><button class="nav-close" aria-label="Fermer">&times;</button><a href="index.html">Accueil</a><a href="offre.html">L'offre</a><a href="parcours.html">Le parcours</a><a href="tarifs.html">Tarifs</a><a href="app.html">Commencer</a></div>
 </nav>
 
 <header class="page-header">
   <div class="wrap">
-    <h1>Faire <em>naître</em><br>votre entreprise</h1>
-    <p>GENÈSE est un accompagnement premium, à capacité limitée. Chaque candidature est étudiée individuellement.</p>
+    <h1>Une <em>question</em><br>avant de commencer ?</h1>
+    <p>GENÈSE s'achète et se démarre directement dans l'application. Ce formulaire sert uniquement si vous avez besoin d'échanger avant.</p>
   </div>
 </header>
 
 <section>
   <div class="wrap">
-    <div class="label">Avant de candidater</div>
+    <div class="label">Pour vérifier que c'est pour vous</div>
     <div class="target">
       <div class="target-card no">
         <div class="tag">Ce n'est pas pour vous si</div>
@@ -39,21 +49,22 @@
       </div>
       <div class="target-card yes">
         <div class="tag">C'est pour vous si</div>
-        <p>Vous avez une idée claire en tête, rien n'est encore lancé, et vous voulez un seul interlocuteur du premier brief au plan de lancement.</p>
+        <p>Vous avez une idée claire en tête, rien n'est encore lancé, et vous voulez avancer vous-même, étape par étape, dans un outil qui structure le travail.</p>
       </div>
+    </div>
+    <div class="hero-actions" style="margin-top:40px;">
+      <a href="app.html" class="btn btn-primary">Commencer mon parcours</a>
     </div>
   </div>
 </section>
 
 <section>
   <div class="wrap">
-    <div class="label">Candidature</div>
-    <h2>Parlez-nous de votre idée.</h2>
-    <p class="lead">Ce formulaire n'engage à rien. Il sert à vérifier que GENÈSE est le bon format pour votre projet avant un premier échange.</p>
+    <div class="label">Une question</div>
+    <h2>Écrivez-nous avant de payer.</h2>
+    <p class="lead">Doute sur le format, question technique, cas particulier : ce formulaire part directement dans notre boîte mail. Réponse sous 48h ouvrées.</p>
 
-    <form class="form" name="genese-candidature" method="POST" data-netlify="true">
-      <input type="hidden" name="form-name" value="genese-candidature">
-
+    <form class="form" id="contact-form" method="POST" action="https://formspree.io/f/REMPLACE_MOI">
       <div class="field">
         <label for="nom">Nom & prénom</label>
         <input type="text" id="nom" name="nom" required>
@@ -65,27 +76,14 @@
       </div>
 
       <div class="field">
-        <label for="stade">Où en est votre idée aujourd'hui ?</label>
-        <select id="stade" name="stade" required>
-          <option value="">Sélectionner...</option>
-          <option value="idee">Encore dans ma tête, rien d'écrit</option>
-          <option value="brouillon">Quelques notes / un brouillon d'offre</option>
-          <option value="avance">Idée avancée, business model presque clair</option>
-          <option value="lance">Déjà lancé (GENÈSE n'est probablement pas adapté)</option>
-        </select>
+        <label for="question">Votre question</label>
+        <textarea id="question" name="question" required></textarea>
       </div>
 
-      <div class="field">
-        <label for="projet">Décrivez votre projet en quelques lignes</label>
-        <textarea id="projet" name="projet" required></textarea>
-      </div>
+      <input type="text" name="_gotcha" style="display:none">
 
-      <div class="field">
-        <label for="delai">Horizon de lancement souhaité</label>
-        <input type="text" id="delai" name="delai" placeholder="Ex. dans 2 mois, pas de date fixe...">
-      </div>
-
-      <button type="submit" class="btn btn-primary">Envoyer ma candidature</button>
+      <button type="submit" class="btn btn-primary">Envoyer</button>
+      <p id="form-status" style="margin-top:16px; font-family:'Space Mono', monospace; font-size:13px; color:var(--moss); display:none;"></p>
     </form>
   </div>
 </section>
@@ -113,5 +111,36 @@
   </div>
 </footer>
 
+<script src="assets/config.js"></script>
+<script src="assets/nav.js"></script>
+<script>
+  const form = document.getElementById('contact-form');
+  const status = document.getElementById('form-status');
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const btn = form.querySelector('button[type="submit"]');
+    btn.disabled = true; btn.textContent = 'Envoi...';
+    try {
+      const res = await fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { 'Accept': 'application/json' }
+      });
+      if (res.ok) {
+        form.reset();
+        status.textContent = 'Message envoyé — réponse sous 48h ouvrées.';
+        status.style.display = 'block';
+        btn.textContent = 'Envoyé';
+      } else {
+        throw new Error('send failed');
+      }
+    } catch (err) {
+      status.textContent = 'Envoi impossible pour le moment — écrivez directement à ' + GENESE_CONFIG.CONTACT_EMAIL;
+      status.style.color = 'var(--rust)';
+      status.style.display = 'block';
+      btn.disabled = false; btn.textContent = 'Envoyer';
+    }
+  });
+</script>
 </body>
 </html>

@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Votre parcours — GENÈSE</title>
+<meta name="description" content="Votre application GENÈSE : 5 étapes pour transformer votre idée en entreprise prête à être lancée.">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,440;0,9..144,600;1,9..144,440&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&family=Space+Mono:wght@400;700&display=swap">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">GEN<em>È</em>SE</a>
+    <ul class="nav-links">
+      <li><a href="index.html">Accueil</a></li>
+      <li><a href="offre.html">L'offre</a></li>
+      <li><a href="parcours.html">Le parcours</a></li>
+      <li><a href="tarifs.html">Tarifs</a></li>
+    </ul>
+    <a href="contact.html" class="nav-cta">Contact</a>
+  <button class="nav-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
+</div>
+<div class="nav-mobile"><button class="nav-close" aria-label="Fermer">&times;</button><a href="index.html">Accueil</a><a href="offre.html">L'offre</a><a href="parcours.html">Le parcours</a><a href="tarifs.html">Tarifs</a><a href="contact.html">Contact</a></div>
+</nav>
+
+<!-- ÉCRAN 1 — PAYWALL (visible si non débloqué) -->
+<div id="paywall-screen" class="app-shell">
+  <div class="wrap">
+    <div class="paywall">
+      <div class="label" style="justify-content:center;">Accès à l'application</div>
+      <div class="price"><span id="genese-price">1 900 €</span></div>
+      <p class="lead">Un paiement unique. Accès immédiat aux 5 étapes. Votre progression est sauvegardée automatiquement, vous pouvez reprendre à tout moment.</p>
+      <a id="pay-btn" href="#" class="btn btn-primary">Payer et commencer</a>
+      <div class="fine">Paiement sécurisé par Stripe. Redirection automatique vers votre application juste après.</div>
+    </div>
+  </div>
+</div>
+
+<!-- ÉCRAN 2 — APPLICATION (visible une fois débloqué) -->
+<div id="app-screen" class="app-shell" style="display:none;">
+  <div class="wrap">
+    <header class="page-header" style="padding-top:0;">
+      <h1>Votre <em>parcours</em></h1>
+      <p>Complétez chaque étape pour débloquer la suivante. Rien n'est perdu — tout se sauvegarde ici, sur cet appareil.</p>
+    </header>
+
+    <div class="app-progress">
+      <div class="app-progress-bar"><div class="app-progress-fill" id="progress-fill" style="width:0%;"></div></div>
+      <div class="app-progress-label"><span id="progress-text">0 / 5 étapes complétées</span><span id="progress-pct">0%</span></div>
+    </div>
+
+    <div class="app-steps" id="steps-container"></div>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap">
+    <div class="label">Strawberry Production</div>
+    <p class="quote">On ne te livre pas une marque. On fait naître l'entreprise avec toi.</p>
+    <div class="footer-grid">
+      <div class="sign">Brand Narrative Architecture — Paris</div>
+      <ul class="footer-nav">
+        <li><a href="offre.html">L'offre</a></li>
+        <li><a href="parcours.html">Parcours</a></li>
+        <li><a href="tarifs.html">Tarifs</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/config.js"></script>
+<script src="assets/nav.js"></script>
+<script>
+/*
+  GENÈSE — Wizard applicatif
+  ---------------------------
+  MVP sans backend : le déblocage se fait via un paramètre d'URL
+  (?unlocked=1) que Stripe renvoie après paiement (configuré dans le
+  Payment Link, champ "Redirection après paiement").
+
+  LIMITE CONNUE : sans backend, ce flag est vérifiable côté client
+  uniquement — un utilisateur technique pourrait forcer l'accès en
+  ajoutant ?unlocked=1 lui-même sans avoir payé. Pour une vraie
+  vérification serveur, il faut une fonction Vercel qui valide la
+  session Stripe côté serveur avant de poser le flag. Fonctionnel
+  tel quel pour lancer et tester la demande ; à durcir avant un
+  volume de vente significatif.
+*/
+
+const STEPS = [
+  {
+    id: 'idee',
+    title: '1. Clarification de l\'idée',
+    hint: 'Affinez l\'offre, le business model, le public cible avant toute chose.',
+    placeholder: 'Quel problème résolvez-vous, pour qui, et pourquoi maintenant ?'
+  },
+  {
+    id: 'positionnement',
+    title: '2. Validation du positionnement',
+    hint: 'Ce que la marque dit, à qui, et pourquoi elle est différente.',
+    placeholder: 'En une phrase : qu\'est-ce que votre marque dit que personne d\'autre ne peut dire ?'
+  },
+  {
+    id: 'identite',
+    title: '3. Nom et identité',
+    hint: 'Naming, ton, univers visuel et verbal cohérents avec le positionnement.',
+    placeholder: 'Pistes de nom, ton de voix, références visuelles qui vous parlent...'
+  },
+  {
+    id: 'site',
+    title: '4. Site',
+    hint: 'La vitrine web alignée avec l\'identité définie à l\'étape précédente.',
+    placeholder: 'Pages nécessaires, contenu prioritaire, exemples de sites que vous aimez...'
+  },
+  {
+    id: 'lancement',
+    title: '5. Plan de lancement à 90 jours',
+    hint: 'Une feuille de route concrète pour les trois premiers mois d\'existence publique.',
+    placeholder: 'Vos 3 premières actions, canaux prioritaires, objectif à 90 jours...'
+  }
+];
+
+const STORAGE_KEY = 'genese_progress';
+const UNLOCK_KEY = 'genese_unlocked';
+
+function getProgress() {
+  try { return JSON.parse(localStorage.getItem(STORAGE_KEY)) || {}; }
+  catch { return {}; }
+}
+function saveProgress(data) {
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+}
+function isUnlocked() {
+  return localStorage.getItem(UNLOCK_KEY) === '1';
+}
+
+// Déblocage via retour de paiement Stripe
+const params = new URLSearchParams(window.location.search);
+if (params.get('unlocked') === '1') {
+  localStorage.setItem(UNLOCK_KEY, '1');
+  window.history.replaceState({}, '', 'app.html');
+}
+
+document.getElementById('genese-price').textContent = GENESE_CONFIG.PRICE_DISPLAY;
+document.getElementById('pay-btn').href = GENESE_CONFIG.STRIPE_PAYMENT_LINK;
+
+function renderApp() {
+  const paywall = document.getElementById('paywall-screen');
+  const app = document.getElementById('app-screen');
+
+  if (!isUnlocked()) {
+    paywall.style.display = 'block';
+    app.style.display = 'none';
+    return;
+  }
+  paywall.style.display = 'none';
+  app.style.display = 'block';
+
+  const progress = getProgress();
+  const container = document.getElementById('steps-container');
+  container.innerHTML = '';
+
+  STEPS.forEach((step, i) => {
+    const prevDone = i === 0 || !!(progress[STEPS[i - 1].id] && progress[STEPS[i - 1].id].trim().length > 0);
+    const done = !!(progress[step.id] && progress[step.id].trim().length > 0);
+    const locked = !prevDone && !done;
+
+    const el = document.createElement('div');
+    el.className = 'app-step' + (done ? ' done' : '') + (locked ? ' locked' : '');
+    el.innerHTML = `
+      <div class="app-step-head" data-toggle="${step.id}">
+        <div class="app-step-num">${done ? '✓' : (i + 1)}</div>
+        <h4>${step.title}</h4>
+        <div class="app-step-status">${done ? 'Complété' : (locked ? 'Verrouillé' : 'À faire')}</div>
+      </div>
+      <div class="app-step-body">
+        <p class="hint">${step.hint}</p>
+        <textarea data-field="${step.id}" placeholder="${step.placeholder}">${progress[step.id] || ''}</textarea>
+        <div class="app-step-actions">
+          <button class="btn btn-primary" data-save="${step.id}">Sauvegarder l'étape</button>
+          <span class="app-save-note" data-note="${step.id}">Sauvegardé</span>
+        </div>
+      </div>
+    `;
+    container.appendChild(el);
+  });
+
+  container.querySelectorAll('[data-save]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const id = btn.getAttribute('data-save');
+      const textarea = container.querySelector(`textarea[data-field="${id}"]`);
+      const current = getProgress();
+      current[id] = textarea.value;
+      saveProgress(current);
+      const note = container.querySelector(`[data-note="${id}"]`);
+      note.classList.add('show');
+      setTimeout(() => note.classList.remove('show'), 2000);
+      renderApp();
+    });
+  });
+
+  container.querySelectorAll('[data-toggle]').forEach(head => {
+    head.addEventListener('click', () => {
+      const stepEl = head.closest('.app-step');
+      if (stepEl.classList.contains('locked')) return;
+      stepEl.querySelector('.app-step-body').style.display =
+        stepEl.querySelector('.app-step-body').style.display === 'none' ? 'block' : 'none';
+    });
+  });
+
+  const doneCount = STEPS.filter(s => progress[s.id] && progress[s.id].trim().length > 0).length;
+  const pct = Math.round((doneCount / STEPS.length) * 100);
+  document.getElementById('progress-fill').style.width = pct + '%';
+  document.getElementById('progress-text').textContent = doneCount + ' / ' + STEPS.length + ' étapes complétées';
+  document.getElementById('progress-pct').textContent = pct + '%';
+}
+
+renderApp();
+</script>
+</body>
+</html>

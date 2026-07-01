@@ -3,8 +3,16 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Le parcours — GENÈSE | Strawberry Production</title>
-<meta name="description" content="Les 5 étapes du parcours GENÈSE, de la clarification de l'idée au plan de lancement à 90 jours, sur 4 à 8 semaines.">
+<title>Le parcours — GENÈSE, 5 étapes dans l'application | Strawberry Production</title>
+<meta name="description" content="Les 5 étapes de l'application GENÈSE, débloquées une à une, de la clarification de l'idée au plan de lancement à 90 jours — à votre rythme.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,440;0,9..144,600;1,9..144,440&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&family=Space+Mono:wght@400;700&display=swap">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<meta property="og:title" content="Le parcours — GENÈSE, 5 étapes dans l'application">
+<meta property="og:description" content="Les 5 étapes de l'application GENÈSE, débloquées une à une, à votre rythme.">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary">
 <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
@@ -18,21 +26,23 @@
       <li><a href="parcours.html" class="active">Le parcours</a></li>
       <li><a href="tarifs.html">Tarifs</a></li>
     </ul>
-    <a href="contact.html" class="nav-cta">Candidater</a>
-  </div>
+    <a href="app.html" class="nav-cta">Commencer</a>
+  <button class="nav-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
+</div>
+<div class="nav-mobile"><button class="nav-close" aria-label="Fermer">&times;</button><a href="index.html">Accueil</a><a href="offre.html">L'offre</a><a href="parcours.html" class="active">Le parcours</a><a href="tarifs.html">Tarifs</a><a href="app.html">Commencer</a></div>
 </nav>
 
 <header class="page-header">
   <div class="wrap">
     <h1>Le <em>parcours</em></h1>
-    <p>Cinq mouvements, quatre à huit semaines. Chaque étape s'appuie sur la précédente — rien n'est livré en silo.</p>
+    <p>Cinq étapes dans l'application. Chaque étape se débloque quand la précédente est complétée — rien n'est livré en silo.</p>
   </div>
 </header>
 
 <section>
   <div class="wrap">
     <div class="label">Format</div>
-    <h2>Un accompagnement, pas une commande.</h2>
+    <h2>Une application, pas une commande.</h2>
 
     <div class="path">
       <div class="step">
@@ -72,22 +82,22 @@
       </div>
     </div>
 
-    <div class="weeks">DURÉE TOTALE — 4 À 8 SEMAINES SELON L'AMPLEUR DU PROJET</div>
+    <div class="weeks">À VOTRE RYTHME — AUCUNE DATE LIMITE, PROGRESSION SAUVEGARDÉE</div>
   </div>
 </section>
 
 <section>
   <div class="wrap">
-    <div class="label">Friction</div>
-    <h2>La plus exigeante en temps — et c'est voulu.</h2>
-    <p class="lead">Contrairement aux autres offres du portefeuille (qui fonctionnent comme des actifs qui tournent sans intervention constante), GENÈSE est un service premium à forte implication. Elle ne tourne pas sans un accompagnement continu — elle est déployée sur toute la durée d'un client, du premier brief au lancement.</p>
+    <div class="label">Implication</div>
+    <h2>C'est vous qui avancez — l'application structure, elle ne fait pas à votre place.</h2>
+    <p class="lead">Contrairement à un audit qu'on lit passivement, GENÈSE demande un vrai travail à chaque étape : vous répondez, vous formulez, vous décidez. L'application séquence et garde la cohérence entre les étapes — mais le fond vient de vous.</p>
 
     <div class="friction-bar">
       <div class="friction-track"><div class="friction-fill"></div></div>
     </div>
     <div class="friction-labels">
-      <span>Faible implication</span>
-      <span>Implication maximale</span>
+      <span>Lecture passive</span>
+      <span>Travail actif requis</span>
     </div>
   </div>
 </section>
@@ -95,8 +105,8 @@
 <section class="section-tight">
   <div class="wrap">
     <div class="hero-actions">
-      <a href="tarifs.html" class="btn btn-primary">Voir les tarifs</a>
-      <a href="contact.html" class="btn btn-ghost">Candidater</a>
+      <a href="tarifs.html" class="btn btn-primary">Voir le tarif</a>
+      <a href="app.html" class="btn btn-ghost">Commencer mon parcours</a>
     </div>
   </div>
 </section>
@@ -104,7 +114,7 @@
 <footer>
   <div class="wrap">
     <div class="label">Strawberry Production</div>
-    <p class="quote">Cinq étapes. Une seule personne aux commandes.</p>
+    <p class="quote">Cinq étapes. Une application. Votre rythme.</p>
     <div class="footer-grid">
       <div class="sign">Brand Narrative Architecture — Paris</div>
       <ul class="footer-nav">
@@ -117,5 +127,7 @@
   </div>
 </footer>
 
+<script src="assets/config.js"></script>
+<script src="assets/nav.js"></script>
 </body>
 </html>

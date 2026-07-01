@@ -3,8 +3,16 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>GENÈSE — De l'idée à l'entreprise | Strawberry Production</title>
-<meta name="description" content="GENÈSE : l'accompagnement de bout en bout qui transforme une idée en entreprise — nom, positionnement, identité, site et plan de lancement à 90 jours.">
+<title>GENÈSE — L'application pas-à-pas pour lancer votre entreprise | Strawberry Production</title>
+<meta name="description" content="GENÈSE : l'application qui vous fait avancer pas à pas, avec vous, de l'idée à l'entreprise — nom, positionnement, identité, site et plan de lancement à 90 jours.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,440;0,9..144,600;1,9..144,440&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&family=Space+Mono:wght@400;700&display=swap">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<meta property="og:title" content="GENÈSE — L'application pas-à-pas pour lancer votre entreprise">
+<meta property="og:description" content="GENÈSE : l'application qui vous fait avancer pas à pas, avec vous, de l'idée à l'entreprise.">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary">
 <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
@@ -18,20 +26,22 @@
       <li><a href="parcours.html">Le parcours</a></li>
       <li><a href="tarifs.html">Tarifs</a></li>
     </ul>
-    <a href="contact.html" class="nav-cta">Candidater</a>
-  </div>
+    <a href="app.html" class="nav-cta">Commencer</a>
+  <button class="nav-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
+</div>
+<div class="nav-mobile"><button class="nav-close" aria-label="Fermer">&times;</button><a href="index.html" class="active">Accueil</a><a href="offre.html">L'offre</a><a href="parcours.html">Le parcours</a><a href="tarifs.html">Tarifs</a><a href="app.html">Commencer</a></div>
 </nav>
 
 <header class="hero">
   <div class="hero-seed" id="seed"></div>
   <div class="wrap">
-    <div class="eyebrow">Strawberry Production — Offre premium</div>
+    <div class="eyebrow">Strawberry Production — Application payante</div>
     <h1 class="title">GEN<em>È</em>SE</h1>
-    <p class="subtitle">L'accompagnement de bout en bout, de l'idée au branding complet.</p>
+    <p class="subtitle">L'application qui vous fait avancer pas à pas, de l'idée au branding complet.</p>
     <p class="manifesto">« On ne te livre pas une marque.<br>On fait naître l'entreprise avec toi. »</p>
     <div class="hero-actions">
       <a href="offre.html" class="btn btn-primary">Découvrir l'offre</a>
-      <a href="contact.html" class="btn btn-ghost">Candidater</a>
+      <a href="app.html" class="btn btn-ghost">Commencer mon parcours</a>
     </div>
   </div>
 </header>
@@ -39,8 +49,8 @@
 <section>
   <div class="wrap">
     <div class="label">Le concept</div>
-    <h2>Ni un audit, ni un produit ponctuel.<br>Un parcours.</h2>
-    <p class="lead">GENÈSE prend quelqu'un de « j'ai une idée d'entreprise en tête » jusqu'à « j'ai un nom, un positionnement, une identité, un site, et un plan de lancement ». C'est la fusion de trois savoir-faire en un seul fil narratif.</p>
+    <h2>Ni un audit, ni un produit ponctuel.<br>Une application, pas à pas.</h2>
+    <p class="lead">GENÈSE prend quelqu'un de « j'ai une idée d'entreprise en tête » jusqu'à « j'ai un nom, un positionnement, une identité, un site, et un plan de lancement » — à travers 5 étapes que vous débloquez et complétez vous-même, dans l'application, à votre rythme. C'est la fusion de trois savoir-faire en un seul fil narratif, transformée en outil de travail.</p>
 
     <div class="fusion">
       <div class="fusion-cell">
@@ -82,10 +92,10 @@
 <section class="section-tight">
   <div class="wrap">
     <div class="label">En une phrase</div>
-    <p class="quote">GENÈSE transforme une idée encore floue en une entreprise prête à être lancée — nom, positionnement, identité, site et plan d'action — en un seul parcours, avec une seule personne aux commandes.</p>
+    <p class="quote">GENÈSE transforme une idée encore floue en une entreprise prête à être lancée — nom, positionnement, identité, site et plan d'action — via une application pas-à-pas, un seul paiement, votre rythme.</p>
     <div class="hero-actions" style="margin-top:44px;">
       <a href="parcours.html" class="btn btn-primary">Voir le parcours en détail</a>
-      <a href="tarifs.html" class="btn btn-ghost">Voir les tarifs</a>
+      <a href="tarifs.html" class="btn btn-ghost">Voir le tarif</a>
     </div>
   </div>
 </section>
@@ -119,5 +129,7 @@
   });
 </script>
 
+<script src="assets/config.js"></script>
+<script src="assets/nav.js"></script>
 </body>
 </html>
