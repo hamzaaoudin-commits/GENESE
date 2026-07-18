@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Votre parcours — NOVA</title>
-<meta name="description" content="Votre application NOVA : cinq étapes pour transformer votre idée en entreprise prête à lancer.">
+<title>Conditions générales de vente — NOVA | Strawberry Production</title>
+<meta name="description" content="Conditions générales de vente de l'application NOVA, éditée par Strawberry Production.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,440;0,9..144,600;1,9..144,440&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&family=Space+Mono:wght@400;700&display=swap">
@@ -12,10 +12,13 @@
 <link rel="icon" href="assets/favicon-32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="assets/favicon-180.png">
 <meta name="theme-color" content="#f1ece1">
-<meta name="robots" content="noindex">
-<meta property="og:title" content="Votre parcours — NOVA">
-<meta property="og:description" content="Votre application NOVA : cinq étapes pour transformer votre idée en entreprise prête à lancer.">
-<meta property="og:url" content="https://REMPLACE-PAR-TON-DOMAINE.fr/app">
+<link rel="canonical" href="https://REMPLACE-PAR-TON-DOMAINE.fr/cgv">
+<link rel="alternate" hreflang="fr" href="https://REMPLACE-PAR-TON-DOMAINE.fr/cgv">
+<link rel="alternate" hreflang="en" href="https://REMPLACE-PAR-TON-DOMAINE.fr/cgv?lang=en">
+<link rel="alternate" hreflang="x-default" href="https://REMPLACE-PAR-TON-DOMAINE.fr/cgv">
+<meta property="og:title" content="Conditions générales de vente — NOVA | Strawberry Production">
+<meta property="og:description" content="Conditions générales de vente de l'application NOVA, éditée par Strawberry Production.">
+<meta property="og:url" content="https://REMPLACE-PAR-TON-DOMAINE.fr/cgv">
 <meta property="og:image" content="https://REMPLACE-PAR-TON-DOMAINE.fr/assets/og-image.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -41,7 +44,7 @@
       <div class="lang-toggle">
         <button data-lang="fr">FR</button><span class="sep">/</span><button data-lang="en">EN</button>
       </div>
-      <a href="contact.html" class="nav-cta" data-i18n="nav.contact">Contact</a>
+      <a href="app.html" class="nav-cta" data-i18n="nav.start">Commencer</a>
       <button class="nav-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
     </div>
   </div>
@@ -55,58 +58,28 @@
     <a href="app.html" data-i18n="nav.start">Commencer</a>
   </div>
 </nav>
-<div id="paywall-screen" class="app-shell"><span id="main"></span>
-  <div class="wrap">
-    <div class="paywall">
-      <div class="label" style="justify-content:center;" data-i18n="app.pay.label">Accès à l'application</div>
-      <div class="price"><span id="nova-price">999 €</span></div>
-      <p class="lead" data-i18n="app.pay.lead">Un paiement unique. Accès immédiat aux cinq étapes et au dossier exportable.</p>
-      <a id="pay-btn" href="#" class="btn btn-primary" data-i18n="app.pay.btn">Payer et commencer</a>
-      <div class="fine" data-i18n="app.pay.fine">Paiement sécurisé par Stripe. Garantie 14 jours.</div>
-    </div>
-  </div>
-</div>
-
-<div id="app-screen" class="app-shell" style="display:none;">
-  <div class="wrap">
-    <div class="app-welcome" id="app-welcome">
-      <div class="k" data-i18n="app.welcome.k">Bienvenue</div>
-      <h2 data-i18n="app.welcome.h">Vous y êtes.</h2>
-      <p data-i18n="app.welcome.p">Les cinq prochaines étapes construisent votre dossier de marque. Comptez trois à quatre semaines, deux sessions d'une heure par semaine. Tout ce que vous écrivez est sauvegardé au fur et à mesure.</p>
-    </div>
-
-    <header class="page-header" style="padding-top:0; border-bottom:none;">
-      <h1 data-i18n="app.h1">Votre <em>parcours</em></h1>
-      <p data-i18n="app.sub">Complétez chaque étape pour débloquer la suivante.</p>
-    </header>
-
-    <div class="app-progress">
-      <div class="rings-block" style="margin-top:0;">
-        <div class="rings" id="app-rings" data-rings data-done="0" data-label="étapes"></div>
-        <div class="rings-legend" id="app-rings-legend"></div>
-      </div>
-    </div>
-
-    <div class="app-steps" id="steps-container"></div>
-
-    <div class="app-complete" id="app-complete" style="display:none;">
-      <div class="k" data-i18n="app.done.k">Parcours terminé</div>
-      <h2 data-i18n="app.done.h">Les cinq anneaux sont refermés.</h2>
-      <p data-i18n="app.done.p">Votre dossier de marque est prêt. Vous pouvez l'ouvrir, l'imprimer ou l'enregistrer en PDF pour le transmettre.</p>
-      <button type="button" class="btn btn-primary" id="open-dossier" data-i18n="app.done.btn">Ouvrir mon dossier de marque</button>
-    </div>
-  </div>
-</div>
-
-<div id="dossier-screen" class="app-shell" style="display:none;">
-  <div class="wrap">
-    <div class="dossier-bar">
-      <button type="button" class="btn btn-ghost" id="dossier-back" data-i18n="app.dossier.back">Retour au parcours</button>
-      <button type="button" class="btn btn-primary" id="dossier-print" data-i18n="app.dossier.print">Imprimer / enregistrer en PDF</button>
-    </div>
-    <article class="dossier" id="dossier-content"></article>
-  </div>
-</div>
+<header class="page-header" id="main">
+  <div class="wrap"><h1>Conditions générales de <em>vente</em></h1>
+  <p><span class="todo">à compléter</span> — contenu à faire valider juridiquement avant mise en ligne.</p></div>
+</header>
+<section><div class="wrap">
+    <h2 style="font-size:26px; margin-top:44px;">Objet</h2>
+    <p class="lead">[[Description du service : accès à l'application NOVA, cinq étapes, dossier exportable.]]</p>
+    <h2 style="font-size:26px; margin-top:44px;">Prix et paiement</h2>
+    <p class="lead">[[Prix TTC, moyens de paiement acceptés, prestataire Stripe, moment du débit.]]</p>
+    <h2 style="font-size:26px; margin-top:44px;">Accès au service</h2>
+    <p class="lead">[[Modalités et durée d'accès après paiement, conditions techniques requises.]]</p>
+    <h2 style="font-size:26px; margin-top:44px;">Droit de rétractation</h2>
+    <p class="lead">[[⚠️ POINT CRITIQUE — Contenu numérique fourni immédiatement : la renonciation expresse et préalable au droit de rétractation (art. L221-28 du Code de la consommation) doit être recueillie explicitement au moment de l'achat, avec case à cocher non pré-cochée. À faire rédiger et implémenter par un juriste.]]</p>
+    <h2 style="font-size:26px; margin-top:44px;">Garantie commerciale</h2>
+    <p class="lead">[[Garantie de remboursement 14 jours annoncée sur la page tarif : en préciser ici les modalités exactes, le délai de traitement et le canal de demande.]]</p>
+    <h2 style="font-size:26px; margin-top:44px;">Responsabilité</h2>
+    <p class="lead">[[Limites de responsabilité, obligation de moyens.]]</p>
+    <h2 style="font-size:26px; margin-top:44px;">Données personnelles</h2>
+    <p class="lead">[[Renvoi vers les mentions légales.]]</p>
+    <h2 style="font-size:26px; margin-top:44px;">Droit applicable et litiges</h2>
+    <p class="lead">[[Droit français, médiateur de la consommation, plateforme RLL européenne.]]</p>
+</div></section>
 <footer>
   <div class="wrap">
     <div class="label" data-i18n="footer.house">Strawberry Production</div>
@@ -126,9 +99,6 @@
   </div>
 </footer><script src="assets/config.js"></script>
 <script src="assets/i18n.js"></script>
-<script src="assets/app-steps.js"></script>
-<script src="assets/rings.js"></script>
 <script src="assets/nav.js"></script>
-<script src="assets/app.js"></script>
 </body>
 </html>

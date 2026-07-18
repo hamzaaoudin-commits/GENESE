@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Contact — NOVA | Strawberry Production</title>
-<meta name="description" content="Une question avant de commencer votre parcours NOVA ? Écrivez-nous. Pour démarrer directement, rendez-vous sur l'application.">
+<meta name="description" content="Une question avant de commencer votre parcours NOVA ? Vérifiez si l'offre vous correspond, ou écrivez-nous.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,440;0,9..144,600;1,9..144,440&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&family=Space+Mono:wght@400;700&display=swap">
@@ -12,12 +12,12 @@
 <link rel="icon" href="assets/favicon-32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="assets/favicon-180.png">
 <meta name="theme-color" content="#f1ece1">
-<meta property="og:title" content="Contact — NOVA | Strawberry Production">
-<meta property="og:description" content="Une question avant de commencer votre parcours NOVA ? Écrivez-nous. Pour démarrer directement, rendez-vous sur l'application.">
 <link rel="canonical" href="https://REMPLACE-PAR-TON-DOMAINE.fr/contact">
 <link rel="alternate" hreflang="fr" href="https://REMPLACE-PAR-TON-DOMAINE.fr/contact">
 <link rel="alternate" hreflang="en" href="https://REMPLACE-PAR-TON-DOMAINE.fr/contact?lang=en">
 <link rel="alternate" hreflang="x-default" href="https://REMPLACE-PAR-TON-DOMAINE.fr/contact">
+<meta property="og:title" content="Contact — NOVA | Strawberry Production">
+<meta property="og:description" content="Une question avant de commencer votre parcours NOVA ? Vérifiez si l'offre vous correspond, ou écrivez-nous.">
 <meta property="og:url" content="https://REMPLACE-PAR-TON-DOMAINE.fr/contact">
 <meta property="og:image" content="https://REMPLACE-PAR-TON-DOMAINE.fr/assets/og-image.png">
 <meta property="og:image:width" content="1200">
@@ -37,6 +37,7 @@
       <li><a href="index.html" data-i18n="nav.home">Accueil</a></li>
       <li><a href="offre.html" data-i18n="nav.offer">L'offre</a></li>
       <li><a href="parcours.html" data-i18n="nav.journey">Le parcours</a></li>
+      <li><a href="methode.html" data-i18n="nav.method">La méthode</a></li>
       <li><a href="tarifs.html" data-i18n="nav.pricing">Tarif</a></li>
     </ul>
     <div class="nav-right">
@@ -51,31 +52,46 @@
     <a href="index.html" data-i18n="nav.home">Accueil</a>
     <a href="offre.html" data-i18n="nav.offer">L'offre</a>
     <a href="parcours.html" data-i18n="nav.journey">Le parcours</a>
+    <a href="methode.html" data-i18n="nav.method">La méthode</a>
     <a href="tarifs.html" data-i18n="nav.pricing">Tarif</a>
+    <a href="contact.html" data-i18n="nav.contact">Contact</a>
     <a href="app.html" data-i18n="nav.start">Commencer</a>
   </div>
 </nav>
 <header class="page-header" id="main">
   <div class="wrap">
-    <h1 data-i18n="contact.h1">Une <em>question</em><br>avant de commencer ?</h1>
-    <p data-i18n="contact.sub">NOVA s'achète et se démarre directement dans l'application. Ce formulaire sert uniquement si vous voulez échanger avant.</p>
+    <h1 data-i18n="contact.h1">Une <em>question</em> avant de commencer ?</h1>
+    <p data-i18n="contact.sub">NOVA s'achète et se démarre directement dans l'application. Si vous hésitez, la réponse est probablement ci-dessous.</p>
   </div>
 </header>
 
 <section>
   <div class="wrap">
-    <div class="label" data-i18n="contact.check.label">Pour vérifier que c'est pour vous</div>
-    <div class="target">
-      <div class="target-card no">
-        <div class="tag" data-i18n="contact.check.no.tag">Ce n'est pas pour vous si</div>
-        <p data-i18n="contact.check.no.p">Votre entreprise est déjà lancée et tourne — c'est l'offre Strawberry classique qu'il vous faut, pas NOVA.</p>
+    <div class="label" data-i18n="contact.check.label">Vérifier que c'est pour vous</div>
+    <h2 data-i18n="contact.check.h2">NOVA convient à certains projets, et pas à d'autres.</h2>
+    <div class="qualify">
+      <div class="qualify-col yes">
+        <span class="tag" data-i18n="contact.yes.tag">C'est pour vous si</span>
+        <ul>
+          <li data-i18n="contact.yes.1">Vous avez une idée que vous n'arrivez pas encore à formuler simplement</li>
+          <li data-i18n="contact.yes.2">Vous voulez comprendre vos choix de marque, pas les sous-traiter</li>
+          <li data-i18n="contact.yes.3">Vous êtes prêt à écrire vous-même, environ deux heures par semaine</li>
+          <li data-i18n="contact.yes.4">Vous avez besoin d'un document solide pour briefer un développeur ou un designer</li>
+          <li data-i18n="contact.yes.5">Vous lancez seul ou à deux, sans direction marketing en interne</li>
+        </ul>
       </div>
-      <div class="target-card yes">
-        <div class="tag" data-i18n="contact.check.yes.tag">C'est pour vous si</div>
-        <p data-i18n="contact.check.yes.p">Vous avez une idée claire, rien n'est encore lancé, et vous voulez avancer vous-même, étape par étape, dans un outil qui structure le travail.</p>
+      <div class="qualify-col no">
+        <span class="tag" data-i18n="contact.no.tag">Ce n'est pas pour vous si</span>
+        <ul>
+          <li data-i18n="contact.no.1">Votre entreprise est déjà lancée et votre positionnement est stabilisé</li>
+          <li data-i18n="contact.no.2">Vous cherchez quelqu'un qui fasse le travail à votre place</li>
+          <li data-i18n="contact.no.3">Vous devez lancer dans moins de deux semaines</li>
+          <li data-i18n="contact.no.4">Vous attendez un logo et une charte graphique finalisés</li>
+          <li data-i18n="contact.no.5">Vous voulez déléguer la décision plutôt que la prendre</li>
+        </ul>
       </div>
     </div>
-    <div class="hero-actions" style="margin-top:40px;">
+    <div class="hero-actions" style="margin-top:44px;">
       <a href="app.html" class="btn btn-primary" data-i18n="contact.check.cta">Commencer mon parcours</a>
     </div>
   </div>
@@ -83,24 +99,80 @@
 
 <section>
   <div class="wrap">
-    <div class="label" data-i18n="contact.q.label">Une question</div>
-    <h2 data-i18n="contact.q.h2">Écrivez-nous avant de payer.</h2>
-    <p class="lead" data-i18n="contact.q.lead">Doute sur le format, question technique, cas particulier : ce formulaire part directement dans notre boîte mail. Réponse sous 48h ouvrées.</p>
+    <div class="label" data-i18n="pricing.faq.label">Questions fréquentes</div>
+    <h2 data-i18n="pricing.faq.h2">Ce qu'on nous demande avant d'acheter.</h2>
+    <div class="faq">
+      <div class="faq-item">
+        <button class="faq-q" type="button" aria-expanded="false" aria-controls="faq-a-1">
+          <span data-i18n="faq.1.q">Est-ce que l'application écrit à ma place ?</span><span class="mark" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-a" id="faq-a-1">
+          <p data-i18n="faq.1.a">Non. Elle pose les questions, structure vos réponses et maintient la cohérence entre les étapes. Le contenu vient de vous — c'est ce qui fait qu'il vous ressemble et que vous pouvez le défendre.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" type="button" aria-expanded="false" aria-controls="faq-a-2">
+          <span data-i18n="faq.2.q">Combien de temps faut-il compter ?</span><span class="mark" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-a" id="faq-a-2">
+          <p data-i18n="faq.2.a">Trois à quatre semaines à raison de deux sessions d'une heure par semaine. L'accès n'a pas de date limite, mais un parcours qu'on étale sur six mois ne se termine généralement pas.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" type="button" aria-expanded="false" aria-controls="faq-a-3">
+          <span data-i18n="faq.3.q">Qu'est-ce que j'ai concrètement à la fin ?</span><span class="mark" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-a" id="faq-a-3">
+          <p data-i18n="faq.3.a">Un dossier de marque unique, exportable et imprimable, qui contient votre projet formulé, votre positionnement, votre nom et votre univers, l'architecture de votre site et votre plan à 90 jours.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" type="button" aria-expanded="false" aria-controls="faq-a-4">
+          <span data-i18n="faq.4.q">Est-ce que vous faites le site ?</span><span class="mark" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-a" id="faq-a-4">
+          <p data-i18n="faq.4.a">Non. NOVA produit l'architecture, les contenus prioritaires et le brief. Vous repartez avec de quoi construire vous-même ou faire chiffrer un développeur sur une base précise, ce qui coûte beaucoup moins cher qu'un brief flou.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" type="button" aria-expanded="false" aria-controls="faq-a-5">
+          <span data-i18n="faq.5.q">Et si j'ai déjà un nom ?</span><span class="mark" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-a" id="faq-a-5">
+          <p data-i18n="faq.5.a">L'étape 3 sert alors à le valider contre le positionnement que vous venez d'acter, et à construire l'univers autour. Beaucoup de fondateurs découvrent à ce moment que leur nom dit autre chose que ce qu'ils croyaient.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" type="button" aria-expanded="false" aria-controls="faq-a-6">
+          <span data-i18n="faq.6.q">Puis-je être remboursé ?</span><span class="mark" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-a" id="faq-a-6">
+          <p data-i18n="faq.6.a">Oui, sous 14 jours après l'achat, sans justification. Écrivez-nous et le remboursement est traité.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
+<section>
+  <div class="wrap">
+    <div class="label" data-i18n="contact.q.label">Une question</div>
+    <h2 data-i18n="contact.q.h2">Posez-la.</h2>
+    <p class="lead" data-i18n="contact.q.lead">Ce formulaire arrive directement dans notre boîte mail. Réponse sous 48 heures ouvrées.</p>
     <form class="form" id="contact-form" method="POST" action="https://formspree.io/f/REMPLACE_MOI">
       <div class="field">
         <label for="nom" data-i18n="contact.f.name">Nom & prénom</label>
-        <input type="text" id="nom" name="nom" required>
+        <input type="text" id="nom" name="nom" autocomplete="name" required>
       </div>
       <div class="field">
         <label for="email" data-i18n="contact.f.email">Email</label>
-        <input type="email" id="email" name="email" required>
+        <input type="email" id="email" name="email" autocomplete="email" required>
       </div>
       <div class="field">
         <label for="question" data-i18n="contact.f.question">Votre question</label>
         <textarea id="question" name="question" required></textarea>
       </div>
-      <input type="text" name="_gotcha" style="display:none">
+      <input type="text" name="_gotcha" style="display:none" tabindex="-1" aria-hidden="true">
       <button type="submit" class="btn btn-primary" data-i18n="contact.f.send">Envoyer</button>
       <p id="form-status" role="status" aria-live="polite" style="margin-top:16px; font-family:'Space Mono', monospace; font-size:13px; color:var(--moss); display:none;"></p>
     </form>
@@ -116,19 +188,23 @@
 <footer>
   <div class="wrap">
     <div class="label" data-i18n="footer.house">Strawberry Production</div>
-    <p class="quote" data-i18n="footer.quote">On ne te livre pas une marque. On fait naître l'entreprise avec toi.</p>
+    <p class="quote" data-i18n="footer.quote">On ne vous livre pas une marque. On la fait naître avec vous.</p>
     <div class="footer-grid">
       <div class="sign" data-i18n="footer.sign">Architecture de marque — Paris</div>
       <ul class="footer-nav">
         <li><a href="offre.html" data-i18n="nav.offer">L'offre</a></li>
-        <li><a href="parcours.html" data-i18n="nav.journey">Parcours</a></li>
+        <li><a href="parcours.html" data-i18n="nav.journey">Le parcours</a></li>
+        <li><a href="methode.html" data-i18n="nav.method">La méthode</a></li>
         <li><a href="tarifs.html" data-i18n="nav.pricing">Tarif</a></li>
         <li><a href="contact.html" data-i18n="nav.contact">Contact</a></li>
+        <li><a href="mentions-legales.html" data-i18n="footer.legal">Mentions légales</a></li>
+        <li><a href="cgv.html" data-i18n="footer.terms">CGV</a></li>
       </ul>
     </div>
   </div>
 </footer><script src="assets/config.js"></script>
 <script src="assets/i18n.js"></script>
+<script src="assets/faq.js"></script>
 <script src="assets/nav.js"></script>
 <script>
   const form = document.getElementById('contact-form');
@@ -140,12 +216,12 @@
     btn.disabled = true; btn.textContent = DICT['contact.status.sending'][lang];
     try {
       const res = await fetch(form.action, { method:'POST', body:new FormData(form), headers:{'Accept':'application/json'} });
-      if (res.ok) {
-        form.reset();
-        status.textContent = DICT['contact.status.ok'][lang];
-        status.style.display = 'block';
-        btn.textContent = DICT['contact.status.sent'][lang];
-      } else { throw new Error('fail'); }
+      if (!res.ok) throw new Error('fail');
+      form.reset();
+      status.textContent = DICT['contact.status.ok'][lang];
+      status.style.color = 'var(--moss)';
+      status.style.display = 'block';
+      btn.textContent = DICT['contact.status.sent'][lang];
     } catch (err) {
       const mail = (typeof NOVA_CONFIG !== 'undefined') ? NOVA_CONFIG.CONTACT_EMAIL : '';
       status.textContent = DICT['contact.status.error'][lang] + ' ' + mail;

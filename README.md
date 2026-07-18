@@ -6,25 +6,29 @@ Site vitrine + application de production statique (HTML/CSS/JS vanilla) présent
 
 ```
 nova/
-├── index.html          → Accueil
-├── offre.html          → Détail de l'offre
-├── parcours.html       → Les 5 étapes
-├── tarifs.html         → Tarif (paiement unique)
-├── contact.html        → Contact / questions avant achat
-├── app.html            → L'APPLICATION : paywall + wizard 5 étapes (post-paiement)
+├── index.html              → Accueil (livrables, anneaux, ancrage de prix, fondateur)
+├── offre.html              → L'offre en détail (livrables, cadence, différenciation)
+├── parcours.html           → Les 5 étapes + progression en anneaux
+├── methode.html            → D'où vient NOVA, qui est derrière, un cas       ← NOUVEAU
+├── tarifs.html             → Tarif, ancrage, garantie 14 jours, FAQ
+├── contact.html            → Qualification (5+5), FAQ, formulaire
+├── app.html                → L'APPLICATION : paywall, 5 étapes, dossier exportable
+├── mentions-legales.html   → Squelette à compléter                            ← NOUVEAU
+├── cgv.html                → Squelette à compléter                            ← NOUVEAU
 ├── assets/
-│   ├── style.css       → Feuille de style unique (partagée par toutes les pages)
-│   ├── config.js       → Prix + lien de paiement Stripe (SEUL endroit à éditer)
-│   ├── i18n.js         → Moteur + dictionnaire FR/EN
-│   ├── app-steps.js    → Contenu des 5 étapes (chargé par app.html uniquement)
-│   ├── nav.js          → Menu mobile accessible
-│   ├── favicon.svg     → Favicon principal
-│   ├── favicon-32.png  → Repli PNG
-│   ├── favicon-180.png → Icône Apple touch
-│   └── og-image.png    → Image de partage social (1200×630)
+│   ├── style.css           → Feuille de style unique
+│   ├── config.js           → Prix + lien Stripe (SEUL endroit à éditer)
+│   ├── i18n.js             → Moteur + dictionnaire FR/EN (196 clés)
+│   ├── app-steps.js        → Contenu des 5 étapes (app.html uniquement)
+│   ├── app.js              → Logique de l'application + dossier             ← NOUVEAU
+│   ├── rings.js            → Système d'anneaux (marque + progression)       ← NOUVEAU
+│   ├── faq.js              → Accordéon FAQ                                  ← NOUVEAU
+│   ├── nav.js              → Menu mobile accessible
+│   ├── favicon.svg / -32.png / -180.png
+│   └── og-image.png        → Image de partage social (1200×630)
 ├── robots.txt
 ├── sitemap.xml
-└── vercel.json         → Config de déploiement Vercel
+└── vercel.json
 ```
 
 Aucune dépendance, aucun build. Tout fonctionne en ouvrant `index.html` directement dans un navigateur.
@@ -48,6 +52,22 @@ Ouvre `assets/config.js` :
 ### 3. Formulaire de contact
 `contact.html` pointe vers `https://formspree.io/f/REMPLACE_MOI`. Crée un formulaire sur formspree.io et remplace l'ID.
 
+
+## ⚠️ À COMPLÉTER avant mise en ligne — contenu humain
+
+Les marqueurs `[[À COMPLÉTER]]` et les badges rouges « à compléter » sont visibles directement dans les pages. Je n'ai pas inventé ces contenus : un faux nom, un faux cas client ou un faux chiffre de marché sur un site commercial vous exposent réellement.
+
+| Où | Quoi | Pourquoi c'est bloquant |
+|---|---|---|
+| `methode.html` | Votre nom, votre photo, 3 paragraphes de parcours | Un produit à 999 € vendu par un domaine inconnu sans visage ne convertit pas |
+| `methode.html` | Un cas réel documenté (projet, positionnement retenu, nom, résultat) | C'est votre meilleure preuve, et la seule que rien ne remplace |
+| `index.html` | Bloc fondateur (nom, photo, 2-3 phrases) | Idem, en version courte |
+| `index.html` + `tarifs.html` | Les deux `[[BUDGET À VÉRIFIER]]` du tableau d'ancrage | **Ne publiez pas de chiffres inventés** : un tarif de marché faux sur une page prix est de la publicité trompeuse. Sourcez-les ou remplacez la colonne par une formulation qualitative |
+| `mentions-legales.html` | Tous les champs éditeur, hébergeur, RGPD | Obligation légale |
+| `cgv.html` | Tout, en particulier la renonciation au droit de rétractation (art. L221-28) | Sans renonciation expresse recueillie à l'achat, 14 jours de rétractation s'appliquent de plein droit |
+| `tarifs.html` | La garantie 14 jours est **annoncée** sur la page | Vous devez pouvoir l'honorer, et la décrire dans les CGV |
+| `assets/og-image.png` | Refaire avec la vraie typo Fraunces | La version actuelle utilise une police de repli |
+
 ## ⚠️ Limite critique du MVP — à traiter avant toute vente
 
 Le déblocage de l'application se fait **côté client** (`?unlocked=1` + `localStorage`). N'importe qui peut accéder au produit sans payer en ajoutant `?unlocked=1` à l'URL.
@@ -59,13 +79,15 @@ De plus, la progression n'est stockée **que** dans le `localStorage` du navigat
 - Fonction Vercel `/api/verify` : `stripe.checkout.sessions.retrieve()` côté serveur → cookie httpOnly signé
 - Comptes utilisateurs (magic link) + persistance serveur (Supabase ou Vercel KV)
 
-## Reste à faire (hors technique)
+## Éditer les textes
 
-- [ ] Mentions légales, CGV, politique de confidentialité — obligatoires pour la vente en ligne en France. Prévoir la clause de renoncement au droit de rétractation pour contenu numérique (art. L221-28). À faire valider juridiquement.
-- [ ] Preuves : capture de l'application, exemple de livrable, cas client.
-- [ ] FAQ + garantie (14 jours).
-- [ ] Arbitrer l'écart entre la promesse des pages et ce que l'application livre réellement.
-- [ ] Refaire `assets/og-image.png` avec la vraie typo Fraunces (la version actuelle utilise une police de repli).
+Le FR est écrit **en dur dans le HTML** (pour le référencement) **et** présent dans `assets/i18n.js` (pour le basculement FR/EN). **Si vous modifiez un texte, modifiez-le aux deux endroits**, sinon le texte changera en repassant en français.
+
+Le contenu des 5 étapes de l'application est dans `assets/app-steps.js`.
+
+## Le dossier de marque
+
+Quand les 5 étapes sont complétées, un bouton ouvre le dossier compilé. L'export PDF passe par l'impression du navigateur (`window.print()`) avec une feuille `@media print` dédiée : aucune dépendance externe. Testez le rendu sur Chrome et Safari avant lancement.
 
 ## Déployer sur Vercel
 

@@ -1,165 +1,210 @@
 /*
   NOVA — moteur i18n
   -------------------
-  - Traductions FR/EN dans DICT ci-dessous (clé = data-i18n dans le HTML).
-  - Langue résolue dans l'ordre : ?lang= dans l'URL > localStorage > défaut FR.
-  - Le toggle FR/EN met à jour l'URL (?lang=) et localStorage.
-  Pour éditer un texte : cherche sa clé dans DICT et modifie fr/en.
+  - Traductions FR/EN dans DICT (clé = attribut data-i18n dans le HTML).
+  - Le FR est AUSSI écrit en dur dans le HTML pour le référencement :
+    si vous modifiez un texte, modifiez-le AUX DEUX ENDROITS.
+  - Langue résolue dans l'ordre : ?lang= dans l'URL > localStorage > FR par défaut.
 */
 
 const DICT = {
-  // ---------- NAV (commun) ----------
   "nav.home": { fr: "Accueil", en: "Home" },
   "nav.offer": { fr: "L'offre", en: "The offer" },
   "nav.journey": { fr: "Le parcours", en: "The journey" },
+  "nav.method": { fr: "La méthode", en: "The method" },
   "nav.pricing": { fr: "Tarif", en: "Pricing" },
   "nav.contact": { fr: "Contact", en: "Contact" },
   "nav.start": { fr: "Commencer", en: "Start" },
-
-  // ---------- FOOTER (commun) ----------
   "footer.house": { fr: "Strawberry Production", en: "Strawberry Production" },
-  "footer.quote": { fr: "On ne te livre pas une marque. On fait naître l'entreprise avec toi.", en: "We don't hand you a brand. We bring the company to life with you." },
+  "footer.quote": { fr: "On ne vous livre pas une marque. On la fait naître avec vous.", en: "We don't hand you a brand. We bring it to life with you." },
   "footer.sign": { fr: "Architecture de marque — Paris", en: "Brand Narrative Architecture — Paris" },
-
-  // ---------- INDEX ----------
-  "index.eyebrow": { fr: "Strawberry Production — Application payante", en: "Strawberry Production — Paid application" },
-  "index.subtitle": { fr: "L'application qui vous fait avancer, étape par étape, de l'idée à l'entreprise lancée.", en: "The application that moves you forward, step by step, from idea to launched company." },
+  "footer.legal": { fr: "Mentions légales", en: "Legal notice" },
+  "footer.terms": { fr: "CGV", en: "Terms of sale" },
+  "index.eyebrow": { fr: "Strawberry Production — Application", en: "Strawberry Production — Application" },
+  "index.subtitle": { fr: "Cinq étapes pour construire le nom, le positionnement, l'identité, le site et le plan de lancement de votre entreprise.", en: "Five steps to build your company's name, positioning, identity, site and launch plan." },
   "index.manifesto": { fr: "« On ne vous livre pas une marque.<br>On la fait naître avec vous. »", en: "\"We don't hand you a brand.<br>We bring it to life with you.\"" },
-  "index.cta.discover": { fr: "Découvrir l'offre", en: "Discover the offer" },
+  "index.cta.discover": { fr: "Voir ce que vous obtenez", en: "See what you get" },
   "index.cta.start": { fr: "Commencer mon parcours", en: "Start my journey" },
-
-  "index.concept.label": { fr: "Le concept", en: "The concept" },
-  "index.concept.h2": { fr: "Ni un audit, ni un produit livré clé en main.<br>Une application, et vous aux commandes.", en: "Not an audit, not a done-for-you deliverable.<br>An application, with you at the controls." },
-  "index.concept.lead": { fr: "NOVA prend une idée encore floue — « j'aimerais lancer quelque chose » — et la conduit jusqu'à une entreprise prête à exister : un nom, un positionnement, une identité, un site, un plan de lancement. Pas en le faisant à votre place, mais en avançant <em>avec</em> vous, étape après étape. À chaque phase, l'application structure le travail et vous prenez les décisions qui n'appartiennent qu'au fondateur.", en: "NOVA takes an idea that's still blurry — \"I'd like to launch something\" — and carries it all the way to a company ready to exist: a name, a positioning, an identity, a site, a launch plan. Not by doing it for you, but by moving forward <em>with</em> you, step after step. At each phase, the application structures the work and you make the decisions only a founder can make." },
-
-  "index.why.label": { fr: "Pourquoi ça marche", en: "Why it works" },
-  "index.why.01.t": { fr: "Vous restez le fondateur", en: "You stay the founder" },
-  "index.why.01.p": { fr: "L'application ne décide rien à votre place. Elle pose les bonnes questions, dans le bon ordre, et transforme vos réponses en fondations solides.", en: "The application decides nothing for you. It asks the right questions, in the right order, and turns your answers into solid foundations." },
-  "index.why.02.t": { fr: "Un seul fil, pas dix prestataires", en: "One thread, not ten vendors" },
-  "index.why.02.p": { fr: "Stratégie, naming, identité, site, lancement : tout est coordonné dans un même outil cohérent, au lieu d'être éclaté entre des intervenants qui ne se parlent pas.", en: "Strategy, naming, identity, site, launch: everything is coordinated in one coherent tool, instead of scattered across people who never talk to each other." },
-  "index.why.03.t": { fr: "Votre rythme, votre progression", en: "Your pace, your progress" },
-  "index.why.03.p": { fr: "Un paiement unique, un accès sans date limite. Vous avancez quand vous êtes prêt, et tout ce que vous écrivez est sauvegardé.", en: "A single payment, access with no deadline. You move when you're ready, and everything you write is saved." },
-
-  "index.close.label": { fr: "En une phrase", en: "In one sentence" },
-  "index.close.quote": { fr: "NOVA transforme une idée encore floue en une entreprise prête à être lancée — nom, positionnement, identité, site, plan d'action — via une application pas-à-pas où le fondateur garde la main à chaque étape.", en: "NOVA turns a still-blurry idea into a company ready to launch — name, positioning, identity, site, action plan — through a step-by-step application where the founder keeps control at every stage." },
+  "index.out.label": { fr: "Ce que vous obtenez", en: "What you get" },
+  "index.out.h2": { fr: "À la fin des cinq étapes, vous repartez avec un dossier de marque complet.", en: "At the end of the five steps, you leave with a complete brand dossier." },
+  "index.out.lead": { fr: "Pas des notes éparpillées : un document unique, exportable, qui contient tout ce dont vous avez besoin pour lancer.", en: "Not scattered notes: a single, exportable document containing everything you need to launch." },
+  "index.out.1.k": { fr: "LIVRABLE 01", en: "OUTPUT 01" },
+  "index.out.1.t": { fr: "Votre projet, formulé", en: "Your project, articulated" },
+  "index.out.1.p": { fr: "Le problème que vous résolvez, pour qui, et pourquoi maintenant — écrit en une page que vous pouvez montrer à n'importe qui.", en: "The problem you solve, for whom, and why now — written on one page you can show anyone." },
+  "index.out.2.k": { fr: "LIVRABLE 02", en: "OUTPUT 02" },
+  "index.out.2.t": { fr: "Votre positionnement", en: "Your positioning" },
+  "index.out.2.p": { fr: "La phrase que votre marque peut dire et que personne d'autre ne peut reprendre. Celle que vous défendrez pendant des années.", en: "The sentence your brand can say that no one else can take. The one you'll defend for years." },
+  "index.out.3.k": { fr: "LIVRABLE 03", en: "OUTPUT 03" },
+  "index.out.3.t": { fr: "Votre nom et votre univers", en: "Your name and your world" },
+  "index.out.3.p": { fr: "Le nom retenu, le ton de voix, les directions visuelles et verbales — cohérents avec le positionnement que vous venez d'acter.", en: "The chosen name, tone of voice, visual and verbal directions — coherent with the positioning you just settled." },
+  "index.out.4.k": { fr: "LIVRABLE 04", en: "OUTPUT 04" },
+  "index.out.4.t": { fr: "L'architecture de votre site", en: "Your site architecture" },
+  "index.out.4.p": { fr: "Les pages nécessaires, ce que chacune doit dire, dans quel ordre. De quoi briefer un développeur ou construire vous-même.", en: "The pages needed, what each must say, in what order. Enough to brief a developer or build it yourself." },
+  "index.out.5.k": { fr: "LIVRABLE 05", en: "OUTPUT 05" },
+  "index.out.5.t": { fr: "Votre plan à 90 jours", en: "Your 90-day plan" },
+  "index.out.5.p": { fr: "Les actions des trois premiers mois d'existence publique, choisies par vous, à votre portée réelle.", en: "The actions for your first three months in public, chosen by you, within your real reach." },
+  "index.how.label": { fr: "Comment ça se passe", en: "How it works" },
+  "index.how.h2": { fr: "Cinq étapes. Chacune s'appuie sur la précédente.", en: "Five steps. Each builds on the one before." },
+  "index.how.lead": { fr: "L'application pose les questions dans l'ordre où elles se posent vraiment. Vous répondez, elle garde la cohérence d'une étape à l'autre.", en: "The application asks the questions in the order they actually arise. You answer, it keeps coherence from one step to the next." },
+  "index.band.statement": { fr: "Vous êtes la seule personne qui <em>sait</em> ce que vous voulez construire.", en: "You are the only person who <em>knows</em> what you want to build." },
+  "index.band.p": { fr: "NOVA transforme cette connaissance en fondations utilisables. C'est tout le travail, et c'est le seul qui compte.", en: "NOVA turns that knowledge into usable foundations. That's the whole work, and it's the only one that counts." },
+  "index.anchor.label": { fr: "Le point de comparaison", en: "The point of comparison" },
+  "index.anchor.h2": { fr: "Ce que coûte la même chose, ailleurs.", en: "What the same thing costs elsewhere." },
+  "index.anchor.head.who": { fr: "Option", en: "Option" },
+  "index.anchor.head.cost": { fr: "Budget", en: "Budget" },
+  "index.anchor.head.what": { fr: "Ce qui se passe", en: "What happens" },
+  "index.who.label": { fr: "Qui est derrière", en: "Who's behind it" },
+  "index.who.h2": { fr: "Une méthode utilisée avant d'être vendue.", en: "A method used before it was sold." },
+  "index.who.cta": { fr: "Voir la méthode et qui l'a construite", en: "See the method and who built it" },
+  "index.close.label": { fr: "Pour commencer", en: "To begin" },
+  "index.close.quote": { fr: "Une idée claire, cinq étapes, un dossier de marque à la sortie.", en: "A clear idea, five steps, a brand dossier at the end." },
   "index.close.cta1": { fr: "Voir le parcours en détail", en: "See the journey in detail" },
   "index.close.cta2": { fr: "Voir le tarif", en: "See the price" },
-
-  // ---------- OFFRE ----------
+  "step.1.t": { fr: "Clarification de l'idée", en: "Clarifying the idea" },
+  "step.2.t": { fr: "Validation du positionnement", en: "Validating the positioning" },
+  "step.3.t": { fr: "Nom et identité", en: "Name and identity" },
+  "step.4.t": { fr: "Le site", en: "The site" },
+  "step.5.t": { fr: "Plan de lancement à 90 jours", en: "90-day launch plan" },
   "offer.h1": { fr: "L'<em>offre</em>, en détail", en: "The <em>offer</em>, in detail" },
-  "offer.sub": { fr: "Trois savoir-faire fusionnés dans une application en 5 étapes, pour un seul résultat : une entreprise prête à naître, construite avec vous.", en: "Three crafts fused into a 5-step application, for a single result: a company ready to be born, built with you." },
-  "offer.concept.label": { fr: "Le concept", en: "The concept" },
-  "offer.concept.h2": { fr: "Pas un audit. Pas une prestation qu'on subit passivement.", en: "Not an audit. Not a service you sit through passively." },
-  "offer.concept.lead": { fr: "NOVA est une application payante qui vous conduit de « j'ai une idée » à « j'ai une entreprise prête à lancer ». C'est la méthode appliquée en interne par Strawberry Production sur ses propres projets, packagée en un outil que vous parcourez vous-même — l'application cadre chaque étape, vous fournissez la matière, les choix, la direction.", en: "NOVA is a paid application that takes you from \"I have an idea\" to \"I have a company ready to launch.\" It's the method Strawberry Production applies internally on its own projects, packaged into a tool you go through yourself — the application frames each step, you provide the substance, the choices, the direction." },
-
+  "offer.sub": { fr: "Une application en cinq étapes qui produit un dossier de marque complet, construit avec vous.", en: "A five-step application that produces a complete brand dossier, built with you." },
+  "offer.what.label": { fr: "Ce que c'est", en: "What it is" },
+  "offer.what.h2": { fr: "Un cadre de travail structuré, pas un fichier livré.", en: "A structured working framework, not a delivered file." },
+  "offer.what.lead": { fr: "NOVA est la méthode que Strawberry Production applique sur ses propres projets, ouverte et packagée en application. Chaque étape pose les questions dans l'ordre où elles se posent vraiment, garde la mémoire de vos réponses, et s'en sert pour cadrer la suivante. À la fin, tout ce que vous avez écrit se compile en un dossier exportable.", en: "NOVA is the method Strawberry Production applies to its own projects, opened up and packaged as an application. Each step asks the questions in the order they actually arise, remembers your answers, and uses them to frame the next one. At the end, everything you've written compiles into an exportable dossier." },
+  "offer.cadence.label": { fr: "Le rythme", en: "The pace" },
+  "offer.cadence.h2": { fr: "Comptez trois à quatre semaines.", en: "Plan for three to four weeks." },
+  "offer.cadence.lead": { fr: "L'accès est illimité et sans abonnement — mais un parcours qu'on étale ne se termine jamais. Voici la cadence qui fonctionne, à raison de deux sessions d'une heure par semaine.", en: "Access is unlimited and subscription-free — but a journey you spread out never ends. Here's the pace that works, at two one-hour sessions a week." },
+  "offer.cadence.w1": { fr: "Semaine 1", en: "Week 1" },
+  "offer.cadence.w1.p": { fr: "Étapes 1 et 2. Le plus exigeant : c'est là que le projet devient lisible.", en: "Steps 1 and 2. The most demanding: this is where the project becomes legible." },
+  "offer.cadence.w2": { fr: "Semaine 2", en: "Week 2" },
+  "offer.cadence.w2.p": { fr: "Étape 3. Laissez décanter deux ou trois jours avant de trancher le nom.", en: "Step 3. Let it settle two or three days before settling on the name." },
+  "offer.cadence.w3": { fr: "Semaine 3", en: "Week 3" },
+  "offer.cadence.w3.p": { fr: "Étape 4. L'architecture découle presque d'elle-même de ce qui précède.", en: "Step 4. The architecture almost follows on its own from what came before." },
+  "offer.cadence.w4": { fr: "Semaine 4", en: "Week 4" },
+  "offer.cadence.w4.p": { fr: "Étape 5 et export du dossier. Vous sortez avec un plan daté.", en: "Step 5 and dossier export. You leave with a dated plan." },
   "offer.diff.label": { fr: "Ce qui différencie", en: "What sets it apart" },
-  "offer.diff.h2": { fr: "Personne ne couvre tout ce spectre en gardant le fondateur au centre.", en: "No one covers this whole spectrum while keeping the founder at the center." },
-  "offer.diff.lead": { fr: "La plupart des acteurs sont spécialisés sur un seul maillon — stratégie, ou branding, ou dev web — et vous laissent recoller les morceaux entre plusieurs interlocuteurs. NOVA inverse ça : un seul fil narratif, un seul outil, du premier brief au lancement. Et à aucun moment vous n'êtes spectateur : chaque étape attend votre décision.", en: "Most players specialize in a single link — strategy, or branding, or web dev — and leave you to piece it together across several parties. NOVA flips that: one narrative thread, one tool, from first brief to launch. And at no point are you a spectator: every step waits for your decision." },
-  "offer.diff.quote": { fr: "Un paiement unique. Cinq étapes. Le fondateur aux commandes, tout du long.", en: "A single payment. Five steps. The founder in control, the whole way through." },
-
-  "offer.how.label": { fr: "Comment ça marche", en: "How it works" },
-  "offer.how.h2": { fr: "Vous payez une fois. Vous avancez à votre rythme. Vous décidez à chaque étape.", en: "You pay once. You move at your pace. You decide at each step." },
-  "offer.how.lead": { fr: "Après paiement, l'application se débloque intégralement. Les 5 étapes s'enchaînent dans l'ordre — chacune s'appuie sur ce que vous avez rempli à la précédente. Rien ne se perd : votre progression est sauvegardée à chaque étape, vous fermez et vous reprenez où vous en étiez.", en: "After payment, the application unlocks completely. The 5 steps run in order — each builds on what you filled in before. Nothing is lost: your progress is saved at every step, you close and pick up where you left off." },
-
-  // ---------- PARCOURS ----------
+  "offer.diff.h2": { fr: "Un seul fil, du premier mot au plan de lancement.", en: "One thread, from the first word to the launch plan." },
+  "offer.diff.lead": { fr: "La plupart des offres traitent un maillon : la stratégie, ou le branding, ou le site. Vous récupérez trois livrables qui ne se parlent pas et vous faites la couture vous-même. Ici, l'étape 4 sait ce que vous avez décidé à l'étape 2, et le plan de lancement découle du positionnement que vous avez acté.", en: "Most offers handle one link: strategy, or branding, or the site. You end up with three deliverables that don't talk to each other and you do the stitching yourself. Here, step 4 knows what you decided at step 2, and the launch plan follows from the positioning you settled on." },
+  "offer.band.statement": { fr: "Un paiement. Cinq étapes.<br>Un <em>dossier</em> à la sortie.", en: "One payment. Five steps.<br>One <em>dossier</em> at the end." },
   "journey.h1": { fr: "Le <em>parcours</em>", en: "The <em>journey</em>" },
-  "journey.sub": { fr: "Cinq étapes dans l'application. Chacune se débloque quand la précédente est complétée — et chacune attend une décision du fondateur.", en: "Five steps in the application. Each unlocks when the previous one is complete — and each waits for a founder's decision." },
-  "journey.format.label": { fr: "Format", en: "Format" },
-  "journey.format.h2": { fr: "Une application, pas une commande passive.", en: "An application, not a passive order." },
-  "journey.format.lead": { fr: "Vous n'attendez pas qu'on vous livre un fichier. Vous construisez, étape par étape, la marque et l'entreprise — l'application vous guide, garde la cohérence entre les étapes, et ne laisse jamais un choix stratégique se faire sans vous.", en: "You're not waiting for a file to be delivered. You build, step by step, the brand and the company — the application guides you, keeps coherence between steps, and never lets a strategic choice happen without you." },
-  "journey.weeks": { fr: "À VOTRE RYTHME — AUCUNE DATE LIMITE, PROGRESSION SAUVEGARDÉE", en: "AT YOUR PACE — NO DEADLINE, PROGRESS SAVED" },
-
-  "journey.step.role": { fr: "Le rôle du fondateur", en: "The founder's role" },
-
-  "journey.s1.n": { fr: "ÉTAPE 01", en: "STEP 01" },
-  "journey.s1.t": { fr: "Clarification de l'idée", en: "Clarifying the idea" },
-  "journey.s1.p": { fr: "On transforme une intuition en projet lisible : quel problème, pour qui, pourquoi maintenant. L'application structure le questionnement ; le fondateur tranche ce qu'est réellement son projet — et ce qu'il n'est pas.", en: "We turn an intuition into a legible project: what problem, for whom, why now. The application structures the questioning; the founder decides what their project truly is — and what it isn't." },
-  "journey.s1.role": { fr: "Vous seul savez ce qui vous anime. NOVA vous force à le formuler noir sur blanc — c'est votre matière première.", en: "Only you know what drives you. NOVA forces you to put it in writing — that's your raw material." },
-
-  "journey.s2.n": { fr: "ÉTAPE 02", en: "STEP 02" },
-  "journey.s2.t": { fr: "Validation du positionnement", en: "Validating the positioning" },
-  "journey.s2.p": { fr: "On définit ce que la marque dit, à qui, et pourquoi elle est différente. L'application propose les axes ; le fondateur choisit l'angle qu'il est prêt à défendre pendant des années.", en: "We define what the brand says, to whom, and why it's different. The application lays out the angles; the founder picks the one they're ready to defend for years." },
-  "journey.s2.role": { fr: "Un positionnement ne se délègue pas : c'est une conviction. Vous validez celui dans lequel vous vous reconnaissez.", en: "A positioning can't be delegated: it's a conviction. You validate the one you recognize yourself in." },
-
-  "journey.s3.n": { fr: "ÉTAPE 03", en: "STEP 03" },
-  "journey.s3.t": { fr: "Nom et identité", en: "Name and identity" },
-  "journey.s3.p": { fr: "Naming, ton de voix, univers visuel et verbal, cohérents avec le positionnement acté. L'application génère des pistes structurées ; le fondateur retient celles qui portent sa vision.", en: "Naming, tone of voice, visual and verbal world, coherent with the agreed positioning. The application generates structured directions; the founder keeps the ones that carry their vision." },
-  "journey.s3.role": { fr: "Le nom, vous allez le porter partout. C'est vous qui décidez lequel devient le vôtre.", en: "You'll carry the name everywhere. You're the one who decides which one becomes yours." },
-
-  "journey.s4.n": { fr: "ÉTAPE 04", en: "STEP 04" },
-  "journey.s4.t": { fr: "Le site", en: "The site" },
-  "journey.s4.p": { fr: "La vitrine web, alignée avec l'identité définie. L'application cadre l'architecture des pages et les priorités de contenu ; le fondateur arbitre ce qui mérite d'être mis en avant.", en: "The web storefront, aligned with the defined identity. The application frames the page architecture and content priorities; the founder decides what deserves the spotlight." },
-  "journey.s4.role": { fr: "Personne ne connaît votre offre mieux que vous. Vous dictez ce que le site doit dire en premier.", en: "No one knows your offer better than you. You dictate what the site must say first." },
-
-  "journey.s5.n": { fr: "ÉTAPE 05", en: "STEP 05" },
-  "journey.s5.t": { fr: "Plan de lancement à 90 jours", en: "90-day launch plan" },
-  "journey.s5.p": { fr: "Une feuille de route concrète pour les trois premiers mois d'existence publique. L'application propose une structure d'actions ; le fondateur s'engage sur celles qu'il tiendra vraiment.", en: "A concrete roadmap for the first three months of public existence. The application proposes a structure of actions; the founder commits to the ones they'll truly hold to." },
-  "journey.s5.role": { fr: "Un plan que vous n'exécuterez pas ne vaut rien. Vous choisissez les actions à votre portée réelle.", en: "A plan you won't execute is worth nothing. You choose the actions within your real reach." },
-
-  "journey.invol.label": { fr: "Implication", en: "Involvement" },
-  "journey.invol.h2": { fr: "C'est vous qui avancez. L'application structure, elle ne fait pas à votre place.", en: "You're the one moving forward. The application structures; it doesn't do it for you." },
-  "journey.invol.lead": { fr: "Contrairement à un audit qu'on lit passivement, NOVA demande un vrai travail à chaque étape : vous répondez, vous formulez, vous décidez. C'est la condition pour que l'entreprise qui en sort soit vraiment la vôtre.", en: "Unlike an audit you read passively, NOVA demands real work at every step: you answer, you formulate, you decide. That's the condition for the company that comes out to truly be yours." },
-  "journey.invol.left": { fr: "Lecture passive", en: "Passive reading" },
-  "journey.invol.right": { fr: "Travail actif du fondateur", en: "Active founder work" },
+  "journey.sub": { fr: "Cinq étapes dans l'application. Chacune se débloque quand la précédente est complétée.", en: "Five steps in the application. Each unlocks when the previous one is complete." },
+  "journey.rings.label": { fr: "La progression", en: "Progress" },
+  "journey.rings.h2": { fr: "Cinq anneaux. Un par étape franchie.", en: "Five rings. One per step completed." },
+  "journey.rings.lead": { fr: "La progression est visible en permanence dans l'application : chaque étape complétée referme un anneau.", en: "Progress stays visible at all times in the application: each completed step closes a ring." },
+  "journey.step.role": { fr: "Votre décision", en: "Your decision" },
+  "journey.s1.p": { fr: "Vous formulez le problème que vous résolvez, pour qui, et pourquoi maintenant. L'application structure le questionnement et vous force à écrire ce que vous aviez seulement en tête.", en: "You articulate the problem you solve, for whom, and why now. The application structures the questioning and forces you to write down what you only had in your head." },
+  "journey.s1.role": { fr: "Vous seul savez ce qui vous anime. Cette étape le met noir sur blanc — c'est votre matière première pour les quatre suivantes.", en: "Only you know what drives you. This step puts it in writing — it's your raw material for the next four." },
+  "journey.s2.p": { fr: "Vous définissez ce que la marque dit, à qui, et pourquoi elle est différente. L'application propose les axes possibles à partir de l'étape 1.", en: "You define what the brand says, to whom, and why it's different. The application lays out the possible angles from step 1." },
+  "journey.s2.role": { fr: "Un positionnement est une conviction, pas un arbitrage technique. Vous choisissez celui que vous êtes prêt à tenir pendant des années.", en: "A positioning is a conviction, not a technical trade-off. You pick the one you're ready to hold for years." },
+  "journey.s3.p": { fr: "Naming, ton de voix, univers visuel et verbal — cohérents avec le positionnement acté à l'étape précédente. L'application génère des pistes structurées.", en: "Naming, tone of voice, visual and verbal world — coherent with the positioning settled in the previous step. The application generates structured directions." },
+  "journey.s3.role": { fr: "Le nom, vous allez le porter partout, le prononcer mille fois. C'est vous qui décidez lequel devient le vôtre.", en: "You'll carry the name everywhere, say it a thousand times. You decide which one becomes yours." },
+  "journey.s4.p": { fr: "Les pages nécessaires, ce que chacune doit dire, dans quel ordre. L'architecture découle du positionnement et de l'identité définis en amont.", en: "The pages needed, what each must say, in what order. The architecture follows from the positioning and identity defined upstream." },
+  "journey.s4.role": { fr: "Personne ne connaît votre offre mieux que vous. Vous arbitrez ce que le site doit dire en premier.", en: "No one knows your offer better than you. You decide what the site must say first." },
+  "journey.s5.p": { fr: "Une feuille de route pour les trois premiers mois d'existence publique. L'application propose une structure d'actions ; vous retenez celles que vous tiendrez.", en: "A roadmap for your first three months in public. The application proposes a structure of actions; you keep the ones you'll hold to." },
+  "journey.s5.role": { fr: "Un plan que vous n'exécuterez pas ne vaut rien. Vous choisissez les actions à votre portée réelle, pas les plus impressionnantes.", en: "A plan you won't execute is worth nothing. You choose the actions within your real reach, not the most impressive ones." },
+  "journey.close.h2": { fr: "À la sortie : un dossier, pas des notes.", en: "At the end: a dossier, not notes." },
+  "journey.close.lead": { fr: "Quand les cinq anneaux sont refermés, tout ce que vous avez écrit se compile en un document unique que vous pouvez exporter, imprimer et transmettre.", en: "When the five rings are closed, everything you've written compiles into a single document you can export, print and hand over." },
   "journey.cta1": { fr: "Voir le tarif", en: "See the price" },
   "journey.cta2": { fr: "Commencer mon parcours", en: "Start my journey" },
-  "journey.close.quote": { fr: "Cinq étapes. Une application. Le fondateur, à chaque décision.", en: "Five steps. One application. The founder, at every decision." },
-
-  // ---------- TARIFS ----------
-  "pricing.h1": { fr: "Tarif & <em>valeur</em>", en: "Price & <em>value</em>" },
-  "pricing.sub": { fr: "Un paiement unique. Un accès complet et sans date limite à l'application.", en: "A single payment. Full access to the application, with no deadline." },
-  "pricing.label": { fr: "Tarification", en: "Pricing" },
-  "pricing.h2": { fr: "Un paiement unique, accès à vie au parcours.", en: "A single payment, lifetime access to the journey." },
-  "pricing.note": { fr: "Paiement unique — pas d'abonnement. L'application reste accessible tant que vous progressez, sans date limite.", en: "One-time payment — no subscription. The application stays accessible as long as you're progressing, with no deadline." },
-  "pricing.r1": { fr: "RAISON 01", en: "REASON 01" },
-  "pricing.r1.p": { fr: "Remplace le travail d'un stratège, d'un copywriter, d'un designer et d'un développeur — structuré en un seul outil cohérent.", en: "Replaces the work of a strategist, a copywriter, a designer and a developer — structured into one coherent tool." },
-  "pricing.r2": { fr: "RAISON 02", en: "REASON 02" },
-  "pricing.r2.p": { fr: "Un seul paiement couvre les 5 étapes intégralement, sans facturation additionnelle en cours de route.", en: "A single payment covers all 5 steps in full, with no extra billing along the way." },
+  "pricing.h1": { fr: "<em>999 €</em>, une fois.", en: "<em>€999</em>, once." },
+  "pricing.sub": { fr: "Un paiement unique. Accès illimité, sans abonnement, sans frais caché.", en: "A single payment. Unlimited access, no subscription, no hidden fees." },
+  "pricing.label": { fr: "Le tarif", en: "The price" },
+  "pricing.h2": { fr: "Ce que ça remplace, et ce que ça ne remplace pas.", en: "What it replaces, and what it doesn't." },
+  "pricing.lead": { fr: "NOVA ne remplace pas une équipe. Il remplace les trois mois que vous passeriez à tourner en rond avant de savoir quoi demander à cette équipe — et il vous donne le document avec lequel la briefer.", en: "NOVA doesn't replace a team. It replaces the three months you'd spend going in circles before knowing what to ask that team — and it gives you the document to brief them with." },
+  "pricing.note": { fr: "Paiement unique — pas d'abonnement.", en: "Single payment — no subscription." },
   "pricing.incl.label": { fr: "Ce qui est inclus", en: "What's included" },
-  "pricing.incl.quote": { fr: "Un paiement unique. Cinq étapes débloquées progressivement. Aucun frais caché, aucun abonnement.", en: "A single payment. Five steps unlocked progressively. No hidden fees, no subscription." },
+  "pricing.incl.h2": { fr: "Les cinq étapes, le dossier exportable, l'accès sans limite de temps.", en: "The five steps, the exportable dossier, access with no time limit." },
+  "pricing.incl.1": { fr: "Les cinq étapes de l'application, débloquées dans l'ordre", en: "The five steps of the application, unlocked in order" },
+  "pricing.incl.2": { fr: "Le dossier de marque complet, exportable et imprimable", en: "The complete brand dossier, exportable and printable" },
+  "pricing.incl.3": { fr: "Un accès illimité dans le temps, sans reconduction", en: "Unlimited access over time, with no renewal" },
+  "pricing.incl.4": { fr: "Les mises à jour du parcours, sans surcoût", en: "Journey updates, at no extra cost" },
+  "pricing.guarantee.k": { fr: "Garantie", en: "Guarantee" },
+  "pricing.guarantee.h3": { fr: "14 jours pour changer d'avis", en: "14 days to change your mind" },
+  "pricing.guarantee.p": { fr: "Si le parcours ne correspond pas à ce que vous attendiez, écrivez-nous dans les 14 jours suivant l'achat et vous êtes remboursé intégralement. Sans justification à fournir.", en: "If the journey isn't what you expected, write to us within 14 days of purchase and you're refunded in full. No justification required." },
+  "pricing.faq.label": { fr: "Questions fréquentes", en: "Frequent questions" },
+  "pricing.faq.h2": { fr: "Ce qu'on nous demande avant d'acheter.", en: "What people ask us before buying." },
+  "faq.1.q": { fr: "Est-ce que l'application écrit à ma place ?", en: "Does the application write for me?" },
+  "faq.1.a": { fr: "Non. Elle pose les questions, structure vos réponses et maintient la cohérence entre les étapes. Le contenu vient de vous — c'est ce qui fait qu'il vous ressemble et que vous pouvez le défendre.", en: "No. It asks the questions, structures your answers and maintains coherence between steps. The content comes from you — that's what makes it sound like you and lets you defend it." },
+  "faq.2.q": { fr: "Combien de temps faut-il compter ?", en: "How much time should I plan for?" },
+  "faq.2.a": { fr: "Trois à quatre semaines à raison de deux sessions d'une heure par semaine. L'accès n'a pas de date limite, mais un parcours qu'on étale sur six mois ne se termine généralement pas.", en: "Three to four weeks at two one-hour sessions a week. Access has no deadline, but a journey spread over six months usually doesn't get finished." },
+  "faq.3.q": { fr: "Qu'est-ce que j'ai concrètement à la fin ?", en: "What do I concretely have at the end?" },
+  "faq.3.a": { fr: "Un dossier de marque unique, exportable et imprimable, qui contient votre projet formulé, votre positionnement, votre nom et votre univers, l'architecture de votre site et votre plan à 90 jours.", en: "A single brand dossier, exportable and printable, containing your articulated project, your positioning, your name and world, your site architecture and your 90-day plan." },
+  "faq.4.q": { fr: "Est-ce que vous faites le site ?", en: "Do you build the site?" },
+  "faq.4.a": { fr: "Non. NOVA produit l'architecture, les contenus prioritaires et le brief. Vous repartez avec de quoi construire vous-même ou faire chiffrer un développeur sur une base précise, ce qui coûte beaucoup moins cher qu'un brief flou.", en: "No. NOVA produces the architecture, the priority content and the brief. You leave with enough to build it yourself or get a developer to quote on a precise basis, which costs far less than a vague brief." },
+  "faq.5.q": { fr: "Et si j'ai déjà un nom ?", en: "What if I already have a name?" },
+  "faq.5.a": { fr: "L'étape 3 sert alors à le valider contre le positionnement que vous venez d'acter, et à construire l'univers autour. Beaucoup de fondateurs découvrent à ce moment que leur nom dit autre chose que ce qu'ils croyaient.", en: "Step 3 then serves to validate it against the positioning you just settled, and to build the world around it. Many founders discover at that point that their name says something other than what they thought." },
+  "faq.6.q": { fr: "Puis-je être remboursé ?", en: "Can I get a refund?" },
+  "faq.6.a": { fr: "Oui, sous 14 jours après l'achat, sans justification. Écrivez-nous et le remboursement est traité.", en: "Yes, within 14 days of purchase, without justification. Write to us and the refund is processed." },
   "pricing.cta1": { fr: "Commencer mon parcours", en: "Start my journey" },
   "pricing.cta2": { fr: "Revoir le parcours", en: "Review the journey" },
-  "pricing.close.quote": { fr: "Un paiement. Cinq étapes. Votre entreprise.", en: "One payment. Five steps. Your company." },
-
-  // ---------- CONTACT ----------
-  "contact.h1": { fr: "Une <em>question</em><br>avant de commencer ?", en: "A <em>question</em><br>before you start?" },
-  "contact.sub": { fr: "NOVA s'achète et se démarre directement dans l'application. Ce formulaire sert uniquement si vous voulez échanger avant.", en: "NOVA is bought and started directly in the application. This form is only for reaching out beforehand." },
-  "contact.check.label": { fr: "Pour vérifier que c'est pour vous", en: "To check it's right for you" },
-  "contact.check.no.tag": { fr: "Ce n'est pas pour vous si", en: "It's not for you if" },
-  "contact.check.no.p": { fr: "Votre entreprise est déjà lancée et tourne — c'est l'offre Strawberry classique qu'il vous faut, pas NOVA.", en: "Your company is already launched and running — you need the classic Strawberry offer, not NOVA." },
-  "contact.check.yes.tag": { fr: "C'est pour vous si", en: "It's for you if" },
-  "contact.check.yes.p": { fr: "Vous avez une idée claire, rien n'est encore lancé, et vous voulez avancer vous-même, étape par étape, dans un outil qui structure le travail.", en: "You have a clear idea, nothing is launched yet, and you want to move forward yourself, step by step, in a tool that structures the work." },
-  "contact.check.cta": { fr: "Commencer mon parcours", en: "Start my journey" },
+  "pricing.close.quote": { fr: "Un paiement. Cinq étapes. Un dossier.", en: "One payment. Five steps. One dossier." },
+  "method.h1": { fr: "La <em>méthode</em>", en: "The <em>method</em>" },
+  "method.sub": { fr: "D'où vient NOVA, comment elle a été construite, et par qui.", en: "Where NOVA comes from, how it was built, and by whom." },
+  "method.who.label": { fr: "Qui est derrière", en: "Who's behind it" },
+  "method.origin.label": { fr: "L'origine", en: "The origin" },
+  "method.origin.h2": { fr: "Une méthode interne, ouverte au public.", en: "An internal method, opened to the public." },
+  "method.origin.lead": { fr: "NOVA n'a pas été conçue comme un produit. C'est le protocole que Strawberry Production suit sur chaque projet de marque : les mêmes cinq questions, dans le même ordre, parce que c'est l'ordre dans lequel elles se posent réellement. Le formaliser en application permet de le rendre accessible à des fondateurs qui n'ont pas le budget d'un accompagnement complet.", en: "NOVA wasn't designed as a product. It's the protocol Strawberry Production follows on every brand project: the same five questions, in the same order, because that's the order they actually arise in. Formalizing it as an application makes it accessible to founders who don't have the budget for full support." },
+  "method.why.label": { fr: "Pourquoi cet ordre", en: "Why this order" },
+  "method.why.h2": { fr: "Chaque étape rend la suivante possible.", en: "Each step makes the next one possible." },
+  "method.why.lead": { fr: "On ne trouve pas un nom avant de savoir ce qu'on défend. On n'écrit pas un site avant de savoir à qui on parle. La plupart des projets échouent parce qu'ils commencent par la fin — le logo, le nom, le site — et découvrent trop tard qu'il n'y a rien dessous.", en: "You don't find a name before knowing what you stand for. You don't write a site before knowing who you're talking to. Most projects fail because they start at the end — the logo, the name, the site — and discover too late that there's nothing underneath." },
+  "method.case.label": { fr: "Un cas", en: "A case" },
+  "method.case.h2": { fr: "La méthode appliquée, de bout en bout.", en: "The method applied, end to end." },
+  "method.cta": { fr: "Commencer mon parcours", en: "Start my journey" },
+  "contact.h1": { fr: "Une <em>question</em> avant de commencer ?", en: "A <em>question</em> before you start?" },
+  "contact.sub": { fr: "NOVA s'achète et se démarre directement dans l'application. Si vous hésitez, la réponse est probablement ci-dessous.", en: "NOVA is bought and started directly in the application. If you're hesitating, the answer is probably below." },
+  "contact.check.label": { fr: "Vérifier que c'est pour vous", en: "Check whether it's for you" },
+  "contact.check.h2": { fr: "NOVA convient à certains projets, et pas à d'autres.", en: "NOVA suits some projects, and not others." },
+  "contact.yes.tag": { fr: "C'est pour vous si", en: "It's for you if" },
+  "contact.no.tag": { fr: "Ce n'est pas pour vous si", en: "It's not for you if" },
+  "contact.yes.1": { fr: "Vous avez une idée que vous n'arrivez pas encore à formuler simplement", en: "You have an idea you can't yet put simply" },
+  "contact.yes.2": { fr: "Vous voulez comprendre vos choix de marque, pas les sous-traiter", en: "You want to understand your brand choices, not outsource them" },
+  "contact.yes.3": { fr: "Vous êtes prêt à écrire vous-même, environ deux heures par semaine", en: "You're ready to write yourself, about two hours a week" },
+  "contact.yes.4": { fr: "Vous avez besoin d'un document solide pour briefer un développeur ou un designer", en: "You need a solid document to brief a developer or a designer" },
+  "contact.yes.5": { fr: "Vous lancez seul ou à deux, sans direction marketing en interne", en: "You're launching alone or as a pair, with no in-house marketing lead" },
+  "contact.no.1": { fr: "Votre entreprise est déjà lancée et votre positionnement est stabilisé", en: "Your company is already launched and your positioning is settled" },
+  "contact.no.2": { fr: "Vous cherchez quelqu'un qui fasse le travail à votre place", en: "You're looking for someone to do the work for you" },
+  "contact.no.3": { fr: "Vous devez lancer dans moins de deux semaines", en: "You need to launch in less than two weeks" },
+  "contact.no.4": { fr: "Vous attendez un logo et une charte graphique finalisés", en: "You expect a finished logo and visual identity" },
+  "contact.no.5": { fr: "Vous voulez déléguer la décision plutôt que la prendre", en: "You want to delegate the decision rather than make it" },
   "contact.q.label": { fr: "Une question", en: "A question" },
-  "contact.q.h2": { fr: "Écrivez-nous avant de payer.", en: "Write to us before paying." },
-  "contact.q.lead": { fr: "Doute sur le format, question technique, cas particulier : ce formulaire part directement dans notre boîte mail. Réponse sous 48h ouvrées.", en: "Unsure about the format, technical question, edge case: this form goes straight to our inbox. Reply within 48 business hours." },
+  "contact.q.h2": { fr: "Posez-la.", en: "Ask it." },
+  "contact.q.lead": { fr: "Ce formulaire arrive directement dans notre boîte mail. Réponse sous 48 heures ouvrées.", en: "This form goes straight to our inbox. Reply within 48 business hours." },
   "contact.f.name": { fr: "Nom & prénom", en: "Full name" },
   "contact.f.email": { fr: "Email", en: "Email" },
   "contact.f.question": { fr: "Votre question", en: "Your question" },
   "contact.f.send": { fr: "Envoyer", en: "Send" },
   "contact.direct.label": { fr: "Ou directement", en: "Or directly" },
   "contact.direct.p": { fr: "Vous préférez écrire directement ?", en: "Prefer to write directly?" },
-  "contact.status.ok": { fr: "Message envoyé — réponse sous 48h ouvrées.", en: "Message sent — reply within 48 business hours." },
-  "contact.status.sending": { fr: "Envoi...", en: "Sending..." },
+  "contact.check.cta": { fr: "Commencer mon parcours", en: "Start my journey" },
+  "contact.status.sending": { fr: "Envoi…", en: "Sending…" },
+  "contact.status.ok": { fr: "Message envoyé. Réponse sous 48 heures ouvrées.", en: "Message sent. Reply within 48 business hours." },
   "contact.status.sent": { fr: "Envoyé", en: "Sent" },
-
-  // ---------- APP ----------
+  "contact.status.error": { fr: "Erreur d'envoi — écrivez-nous directement à", en: "Sending failed — write to us directly at" },
   "app.pay.label": { fr: "Accès à l'application", en: "Application access" },
-  "app.pay.lead": { fr: "Un paiement unique. Accès immédiat aux 5 étapes. Votre progression est sauvegardée automatiquement, vous pouvez reprendre à tout moment.", en: "A single payment. Immediate access to all 5 steps. Your progress is saved automatically, you can resume anytime." },
+  "app.pay.lead": { fr: "Un paiement unique. Accès immédiat aux cinq étapes et au dossier exportable.", en: "A single payment. Immediate access to the five steps and the exportable dossier." },
   "app.pay.btn": { fr: "Payer et commencer", en: "Pay and start" },
-  "app.pay.fine": { fr: "Paiement sécurisé par Stripe. Redirection automatique vers votre application juste après.", en: "Secure payment via Stripe. Automatic redirect to your application right after." },
+  "app.pay.fine": { fr: "Paiement sécurisé par Stripe. Garantie 14 jours.", en: "Secure payment via Stripe. 14-day guarantee." },
+  "app.welcome.k": { fr: "Bienvenue", en: "Welcome" },
+  "app.welcome.h": { fr: "Vous y êtes.", en: "You're in." },
+  "app.welcome.p": { fr: "Les cinq prochaines étapes construisent votre dossier de marque. Comptez trois à quatre semaines, deux sessions d'une heure par semaine. Tout ce que vous écrivez est sauvegardé au fur et à mesure.", en: "The next five steps build your brand dossier. Plan for three to four weeks, two one-hour sessions a week. Everything you write is saved as you go." },
   "app.h1": { fr: "Votre <em>parcours</em>", en: "Your <em>journey</em>" },
-  "app.sub": { fr: "Complétez chaque étape pour débloquer la suivante. Rien n'est perdu — tout se sauvegarde ici, sur cet appareil.", en: "Complete each step to unlock the next. Nothing is lost — everything saves here, on this device." },
+  "app.sub": { fr: "Complétez chaque étape pour débloquer la suivante.", en: "Complete each step to unlock the next." },
   "app.progress": { fr: "étapes complétées", en: "steps completed" },
+  "app.rings.label": { fr: "étapes", en: "steps" },
   "app.save": { fr: "Sauvegarder l'étape", en: "Save step" },
   "app.saved": { fr: "Sauvegardé", en: "Saved" },
+  "app.save.error": { fr: "Échec de la sauvegarde", en: "Save failed" },
   "app.status.done": { fr: "Complété", en: "Completed" },
   "app.status.locked": { fr: "Verrouillé", en: "Locked" },
   "app.status.todo": { fr: "À faire", en: "To do" },
-  "app.save.error": { fr: "Échec de la sauvegarde", en: "Save failed" },
-  "contact.status.error": { fr: "Erreur d'envoi — écrivez-nous directement à", en: "Sending failed — write to us directly at" }
+  "app.done.k": { fr: "Parcours terminé", en: "Journey complete" },
+  "app.done.h": { fr: "Les cinq anneaux sont refermés.", en: "The five rings are closed." },
+  "app.done.p": { fr: "Votre dossier de marque est prêt. Vous pouvez l'ouvrir, l'imprimer ou l'enregistrer en PDF pour le transmettre.", en: "Your brand dossier is ready. You can open it, print it or save it as a PDF to hand over." },
+  "app.done.btn": { fr: "Ouvrir mon dossier de marque", en: "Open my brand dossier" },
+  "app.dossier.title": { fr: "Dossier de marque", en: "Brand dossier" },
+  "app.dossier.print": { fr: "Imprimer / enregistrer en PDF", en: "Print / save as PDF" },
+  "app.dossier.back": { fr: "Retour au parcours", en: "Back to the journey" },
+  "app.dossier.empty": { fr: "Non renseigné", en: "Not filled in" }
 };
-
 
 function novaGetLang() {
   const p = new URLSearchParams(window.location.search).get('lang');
@@ -176,8 +221,7 @@ function novaApplyLang(lang) {
     const key = el.getAttribute('data-i18n');
     if (!DICT[key] || DICT[key][lang] === undefined) return;
     const value = DICT[key][lang];
-    // innerHTML uniquement si la traduction contient du balisage volontaire
-    // (<br>, <em>) ; textContent partout ailleurs.
+    // innerHTML uniquement si la traduction contient du balisage volontaire.
     if (/<(br|em|strong)\b/i.test(value)) el.innerHTML = value;
     else el.textContent = value;
   });
@@ -188,15 +232,14 @@ function novaApplyLang(lang) {
   document.querySelectorAll('.lang-toggle button').forEach(b => {
     b.classList.toggle('active', b.getAttribute('data-lang') === lang);
   });
-  // keep ?lang in URL without reloading
   const url = new URL(window.location);
   url.searchParams.set('lang', lang);
   window.history.replaceState({}, '', url);
+  document.dispatchEvent(new CustomEvent('nova:lang', { detail: { lang } }));
 }
 
 function novaInitLang() {
-  const lang = novaGetLang();
-  novaApplyLang(lang);
+  novaApplyLang(novaGetLang());
   document.querySelectorAll('.lang-toggle button').forEach(b => {
     b.addEventListener('click', () => novaApplyLang(b.getAttribute('data-lang')));
   });

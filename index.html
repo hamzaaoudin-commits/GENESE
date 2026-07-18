@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>NOVA — L'application pas-à-pas pour lancer votre entreprise | Strawberry Production</title>
-<meta name="description" content="NOVA : l'application qui vous fait avancer, étape par étape, de l'idée à l'entreprise. Le fondateur garde la main à chaque étape.">
+<title>NOVA — Cinq étapes pour lancer votre entreprise | Strawberry Production</title>
+<meta name="description" content="L'application en 5 étapes qui produit votre dossier de marque complet : positionnement, nom, identité, architecture du site et plan à 90 jours.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,440;0,9..144,600;1,9..144,440&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&family=Space+Mono:wght@400;700&display=swap">
@@ -12,12 +12,12 @@
 <link rel="icon" href="assets/favicon-32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="assets/favicon-180.png">
 <meta name="theme-color" content="#f1ece1">
-<meta property="og:title" content="NOVA — L'application pas-à-pas pour lancer votre entreprise | Strawberry Production">
-<meta property="og:description" content="NOVA : l'application qui vous fait avancer, étape par étape, de l'idée à l'entreprise. Le fondateur garde la main à chaque étape.">
 <link rel="canonical" href="https://REMPLACE-PAR-TON-DOMAINE.fr/">
 <link rel="alternate" hreflang="fr" href="https://REMPLACE-PAR-TON-DOMAINE.fr/">
 <link rel="alternate" hreflang="en" href="https://REMPLACE-PAR-TON-DOMAINE.fr/?lang=en">
 <link rel="alternate" hreflang="x-default" href="https://REMPLACE-PAR-TON-DOMAINE.fr/">
+<meta property="og:title" content="NOVA — Cinq étapes pour lancer votre entreprise | Strawberry Production">
+<meta property="og:description" content="L'application en 5 étapes qui produit votre dossier de marque complet : positionnement, nom, identité, architecture du site et plan à 90 jours.">
 <meta property="og:url" content="https://REMPLACE-PAR-TON-DOMAINE.fr/">
 <meta property="og:image" content="https://REMPLACE-PAR-TON-DOMAINE.fr/assets/og-image.png">
 <meta property="og:image:width" content="1200">
@@ -29,12 +29,30 @@
 <meta name="twitter:image" content="https://REMPLACE-PAR-TON-DOMAINE.fr/assets/og-image.png">
 <link rel="stylesheet" href="assets/style.css">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Product","name":"NOVA",
- "brand":{"@type":"Brand","name":"Strawberry Production"},
- "description":"Application pas-à-pas en 5 étapes pour transformer une idée en entreprise prête à être lancée.",
- "url":"https://REMPLACE-PAR-TON-DOMAINE.fr/","image":"https://REMPLACE-PAR-TON-DOMAINE.fr/assets/og-image.png",
- "offers":{"@type":"Offer","price":"999","priceCurrency":"EUR",
-   "availability":"https://schema.org/InStock","url":"https://REMPLACE-PAR-TON-DOMAINE.fr/tarifs"}}
+{
+ "@context": "https://schema.org",
+ "@type": "Product",
+ "name": "NOVA",
+ "brand": {
+  "@type": "Brand",
+  "name": "Strawberry Production"
+ },
+ "description": "Application pas-à-pas en cinq étapes produisant un dossier de marque complet : positionnement, nom, identité, architecture du site et plan de lancement à 90 jours.",
+ "url": "https://REMPLACE-PAR-TON-DOMAINE.fr/",
+ "image": "https://REMPLACE-PAR-TON-DOMAINE.fr/assets/og-image.png",
+ "offers": {
+  "@type": "Offer",
+  "price": "999",
+  "priceCurrency": "EUR",
+  "availability": "https://schema.org/InStock",
+  "url": "https://REMPLACE-PAR-TON-DOMAINE.fr/tarifs",
+  "hasMerchantReturnPolicy": {
+   "@type": "MerchantReturnPolicy",
+   "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
+   "merchantReturnDays": 14
+  }
+ }
+}
 </script>
 </head>
 <body><a href="#main" class="skip-link">Aller au contenu</a>
@@ -45,6 +63,7 @@
       <li><a href="index.html" class="active" data-i18n="nav.home">Accueil</a></li>
       <li><a href="offre.html" data-i18n="nav.offer">L'offre</a></li>
       <li><a href="parcours.html" data-i18n="nav.journey">Le parcours</a></li>
+      <li><a href="methode.html" data-i18n="nav.method">La méthode</a></li>
       <li><a href="tarifs.html" data-i18n="nav.pricing">Tarif</a></li>
     </ul>
     <div class="nav-right">
@@ -59,19 +78,21 @@
     <a href="index.html" data-i18n="nav.home">Accueil</a>
     <a href="offre.html" data-i18n="nav.offer">L'offre</a>
     <a href="parcours.html" data-i18n="nav.journey">Le parcours</a>
+    <a href="methode.html" data-i18n="nav.method">La méthode</a>
     <a href="tarifs.html" data-i18n="nav.pricing">Tarif</a>
+    <a href="contact.html" data-i18n="nav.contact">Contact</a>
     <a href="app.html" data-i18n="nav.start">Commencer</a>
   </div>
 </nav>
 <header class="hero" id="main">
   <div class="hero-seed" id="seed"></div>
   <div class="hero-inner">
-    <div class="eyebrow" data-i18n="index.eyebrow">Strawberry Production — Application payante</div>
+    <div class="eyebrow" data-i18n="index.eyebrow">Strawberry Production — Application</div>
     <h1 class="title">NOVA</h1>
-    <p class="subtitle" data-i18n="index.subtitle">L'application qui vous fait avancer, étape par étape, de l'idée à l'entreprise lancée.</p>
+    <p class="subtitle" data-i18n="index.subtitle">Cinq étapes pour construire le nom, le positionnement, l'identité, le site et le plan de lancement de votre entreprise.</p>
     <p class="manifesto" data-i18n="index.manifesto">« On ne vous livre pas une marque.<br>On la fait naître avec vous. »</p>
     <div class="hero-actions">
-      <a href="offre.html" class="btn btn-primary" data-i18n="index.cta.discover">Découvrir l'offre</a>
+      <a href="offre.html" class="btn btn-primary" data-i18n="index.cta.discover">Voir ce que vous obtenez</a>
       <a href="app.html" class="btn btn-ghost" data-i18n="index.cta.start">Commencer mon parcours</a>
     </div>
   </div>
@@ -79,27 +100,96 @@
 
 <section>
   <div class="wrap">
-    <div class="label" data-i18n="index.concept.label">Le concept</div>
-    <h2 data-i18n="index.concept.h2">Ni un audit, ni un produit livré clé en main.<br>Une application, et vous aux commandes.</h2>
-    <p class="lead" data-i18n="index.concept.lead">NOVA prend une idée encore floue — « j'aimerais lancer quelque chose » — et la conduit jusqu'à une entreprise prête à exister : un nom, un positionnement, une identité, un site, un plan de lancement. Pas en le faisant à votre place, mais en avançant <em>avec</em> vous, étape après étape. À chaque phase, l'application structure le travail et vous prenez les décisions qui n'appartiennent qu'au fondateur.</p>
+    <div class="label" data-i18n="index.out.label">Ce que vous obtenez</div>
+    <h2 data-i18n="index.out.h2">À la fin des cinq étapes, vous repartez avec un dossier de marque complet.</h2>
+    <p class="lead" data-i18n="index.out.lead">Pas des notes éparpillées : un document unique, exportable, qui contient tout ce dont vous avez besoin pour lancer.</p>
+    <div class="output">
+      <div class="output-cell">
+        <div class="k" data-i18n="index.out.1.k">LIVRABLE 01</div>
+        <h3 data-i18n="index.out.1.t">Votre projet, formulé</h3>
+        <p data-i18n="index.out.1.p">Le problème que vous résolvez, pour qui, et pourquoi maintenant — écrit en une page que vous pouvez montrer à n'importe qui.</p>
+      </div>
+      <div class="output-cell">
+        <div class="k" data-i18n="index.out.2.k">LIVRABLE 02</div>
+        <h3 data-i18n="index.out.2.t">Votre positionnement</h3>
+        <p data-i18n="index.out.2.p">La phrase que votre marque peut dire et que personne d'autre ne peut reprendre. Celle que vous défendrez pendant des années.</p>
+      </div>
+      <div class="output-cell">
+        <div class="k" data-i18n="index.out.3.k">LIVRABLE 03</div>
+        <h3 data-i18n="index.out.3.t">Votre nom et votre univers</h3>
+        <p data-i18n="index.out.3.p">Le nom retenu, le ton de voix, les directions visuelles et verbales — cohérents avec le positionnement que vous venez d'acter.</p>
+      </div>
+      <div class="output-cell">
+        <div class="k" data-i18n="index.out.4.k">LIVRABLE 04</div>
+        <h3 data-i18n="index.out.4.t">L'architecture de votre site</h3>
+        <p data-i18n="index.out.4.p">Les pages nécessaires, ce que chacune doit dire, dans quel ordre. De quoi briefer un développeur ou construire vous-même.</p>
+      </div>
+      <div class="output-cell">
+        <div class="k" data-i18n="index.out.5.k">LIVRABLE 05</div>
+        <h3 data-i18n="index.out.5.t">Votre plan à 90 jours</h3>
+        <p data-i18n="index.out.5.p">Les actions des trois premiers mois d'existence publique, choisies par vous, à votre portée réelle.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap">
+    <p class="statement" data-i18n="index.band.statement">Vous êtes la seule personne qui <em>sait</em> ce que vous voulez construire.</p>
+    <p class="lead" data-i18n="index.band.p">NOVA transforme cette connaissance en fondations utilisables. C'est tout le travail, et c'est le seul qui compte.</p>
   </div>
 </section>
 
 <section>
   <div class="wrap">
-    <div class="label" data-i18n="index.why.label">Pourquoi ça marche</div>
-    <div class="why-grid">
-      <div>
-        <div class="n" data-i18n="index.why.01.t">Vous restez le fondateur</div>
-        <p data-i18n="index.why.01.p">L'application ne décide rien à votre place. Elle pose les bonnes questions, dans le bon ordre, et transforme vos réponses en fondations solides.</p>
+    <div class="label" data-i18n="index.how.label">Comment ça se passe</div>
+    <h2 data-i18n="index.how.h2">Cinq étapes. Chacune s'appuie sur la précédente.</h2>
+    <p class="lead" data-i18n="index.how.lead">L'application pose les questions dans l'ordre où elles se posent vraiment. Vous répondez, elle garde la cohérence d'une étape à l'autre.</p>
+    <div class="rings-block">
+      <div class="rings" data-rings data-done="0" data-label="étapes"></div>
+      <ul class="rings-legend">
+      <li><span class="i">01</span><span data-i18n="step.1.t">Clarification de l'idée</span></li>
+      <li><span class="i">02</span><span data-i18n="step.2.t">Validation du positionnement</span></li>
+      <li><span class="i">03</span><span data-i18n="step.3.t">Nom et identité</span></li>
+      <li><span class="i">04</span><span data-i18n="step.4.t">Le site</span></li>
+      <li><span class="i">05</span><span data-i18n="step.5.t">Plan de lancement à 90 jours</span></li>
+      </ul>
+    </div>
+    <div class="hero-actions" style="margin-top:44px;">
+      <a href="parcours.html" class="btn btn-ghost" data-i18n="index.close.cta1">Voir le parcours en détail</a>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="label" data-i18n="index.anchor.label">Le point de comparaison</div>
+    <h2 data-i18n="index.anchor.h2">Ce que coûte la même chose, ailleurs.</h2>
+    <div class="anchor">
+      <div class="anchor-row head">
+        <div data-i18n="index.anchor.head.who">Option</div>
+        <div data-i18n="index.anchor.head.cost">Budget</div>
+        <div data-i18n="index.anchor.head.what">Ce qui se passe</div>
       </div>
-      <div>
-        <div class="n" data-i18n="index.why.02.t">Un seul fil, pas dix prestataires</div>
-        <p data-i18n="index.why.02.p">Stratégie, naming, identité, site, lancement : tout est coordonné dans un même outil cohérent, au lieu d'être éclaté entre des intervenants qui ne se parlent pas.</p>
+      <div class="anchor-row">
+        <div class="who">Une agence de branding</div>
+        <div class="amount">[[BUDGET À VÉRIFIER]]</div>
+        <div class="what">Vous recevez un livrable. Le raisonnement reste chez eux.</div>
       </div>
-      <div>
-        <div class="n" data-i18n="index.why.03.t">Votre rythme, votre progression</div>
-        <p data-i18n="index.why.03.p">Un paiement unique, un accès sans date limite. Vous avancez quand vous êtes prêt, et tout ce que vous écrivez est sauvegardé.</p>
+      <div class="anchor-row">
+        <div class="who">Trois freelances coordonnés</div>
+        <div class="amount">[[BUDGET À VÉRIFIER]]</div>
+        <div class="what">Trois livrables qui ne se parlent pas. La couture est pour vous.</div>
+      </div>
+      <div class="anchor-row">
+        <div class="who">Vous, seul, sans méthode</div>
+        <div class="amount">0 €</div>
+        <div class="what">Trois à six mois à tourner en rond, souvent sans arriver au bout.</div>
+      </div>
+      <div class="anchor-row self">
+        <div class="who">NOVA</div>
+        <div class="amount"><span id="nova-price">999 €</span></div>
+        <div class="what">Cinq étapes, un dossier exportable, et vous gardez la décision.</div>
       </div>
     </div>
   </div>
@@ -107,10 +197,26 @@
 
 <section>
   <div class="wrap">
-    <div class="label" data-i18n="index.close.label">En une phrase</div>
-    <p class="quote" data-i18n="index.close.quote">NOVA transforme une idée encore floue en une entreprise prête à être lancée — nom, positionnement, identité, site, plan d'action — via une application pas-à-pas où le fondateur garde la main à chaque étape.</p>
+    <div class="label" data-i18n="index.who.label">Qui est derrière</div>
+    <h2 data-i18n="index.who.h2">Une méthode utilisée avant d'être vendue.</h2>
+    <div class="founder">
+      <div class="founder-photo">[[PHOTO À AJOUTER]]</div>
+      <div class="founder-body">
+        <div class="name">[[VOTRE NOM]] <span class="todo">à compléter</span></div>
+        <div class="role">Strawberry Production — Paris</div>
+        <p>[[DEUX À TROIS PHRASES : qui vous êtes, depuis combien de temps vous faites ça, pourquoi vous avez formalisé cette méthode en application.]]</p>
+        <a href="methode.html" class="btn btn-ghost" data-i18n="index.who.cta">Voir la méthode et qui l'a construite</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section-tight">
+  <div class="wrap">
+    <div class="label" data-i18n="index.close.label">Pour commencer</div>
+    <p class="quote" data-i18n="index.close.quote">Une idée claire, cinq étapes, un dossier de marque à la sortie.</p>
     <div class="hero-actions" style="margin-top:44px;">
-      <a href="parcours.html" class="btn btn-primary" data-i18n="index.close.cta1">Voir le parcours en détail</a>
+      <a href="app.html" class="btn btn-primary" data-i18n="index.cta.start">Commencer mon parcours</a>
       <a href="tarifs.html" class="btn btn-ghost" data-i18n="index.close.cta2">Voir le tarif</a>
     </div>
   </div>
@@ -118,31 +224,35 @@
 <footer>
   <div class="wrap">
     <div class="label" data-i18n="footer.house">Strawberry Production</div>
-    <p class="quote" data-i18n="footer.quote">On ne te livre pas une marque. On fait naître l'entreprise avec toi.</p>
+    <p class="quote" data-i18n="footer.quote">On ne vous livre pas une marque. On la fait naître avec vous.</p>
     <div class="footer-grid">
       <div class="sign" data-i18n="footer.sign">Architecture de marque — Paris</div>
       <ul class="footer-nav">
         <li><a href="offre.html" data-i18n="nav.offer">L'offre</a></li>
-        <li><a href="parcours.html" data-i18n="nav.journey">Parcours</a></li>
+        <li><a href="parcours.html" data-i18n="nav.journey">Le parcours</a></li>
+        <li><a href="methode.html" data-i18n="nav.method">La méthode</a></li>
         <li><a href="tarifs.html" data-i18n="nav.pricing">Tarif</a></li>
         <li><a href="contact.html" data-i18n="nav.contact">Contact</a></li>
+        <li><a href="mentions-legales.html" data-i18n="footer.legal">Mentions légales</a></li>
+        <li><a href="cgv.html" data-i18n="footer.terms">CGV</a></li>
       </ul>
     </div>
   </div>
 </footer><script src="assets/config.js"></script>
 <script src="assets/i18n.js"></script>
+<script src="assets/rings.js"></script>
 <script src="assets/nav.js"></script>
 <script>
   const seed = document.getElementById('seed');
-  const sizes = [80, 180, 320, 520, 760];
-  sizes.forEach((s, i) => {
-    const ring = document.createElement('div');
-    ring.className = 'ring';
-    ring.style.width = s + 'px';
-    ring.style.height = s + 'px';
-    ring.style.animationDelay = (i * 0.12) + 's';
-    seed.appendChild(ring);
-  });
+  if (seed) {
+    [80,180,320,520,760].forEach((s,i)=>{
+      const r=document.createElement('div');
+      r.className='ring'; r.style.width=s+'px'; r.style.height=s+'px';
+      r.style.animationDelay=(i*0.12)+'s'; seed.appendChild(r);
+    });
+  }
+  const p=document.getElementById('nova-price');
+  if(p && typeof NOVA_CONFIG!=='undefined') p.textContent=NOVA_CONFIG.PRICE_DISPLAY;
 </script>
 </body>
 </html>
